@@ -1,384 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ScrollView
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Select type of shipping"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <RadioButton
+            android:id="@+id/rbMaritime"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="76dp"
+            android:layout_marginStart="72dp"
+            android:layout_marginTop="64dp"
+            android:text="Maritime"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="32"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="parent" />
 
-            <EditText
-                android:id="@+id/etBillofLading"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Bill of Lading"
-                android:inputType="textPersonName"
-                app:layout_constraintBaseline_toBaselineOf="@+id/tvBillofLading"
-                app:layout_constraintEnd_toEndOf="parent" />
+        <RadioButton
+            android:id="@+id/rbAir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="76dp"
+            android:layout_marginTop="64dp"
+            android:layout_marginEnd="24dp"
+            android:text="Air"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="32"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="parent" />
 
-            <EditText
-                android:id="@+id/etArrival"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Port / Airport"
-                android:inputType="textPersonName"
-                app:layout_constraintBaseline_toBaselineOf="@+id/tvArrival"
-                app:layout_constraintEnd_toEndOf="parent" />
+        <RadioButton
+            android:id="@+id/rbRoad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="76dp"
+            android:layout_marginTop="64dp"
+            android:text="Road"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="parent" />
+    </RadioGroup>
 
-            <TextView
-                android:id="@+id/tvVolume"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="28dp"
-                android:layout_marginEnd="96dp"
-                android:text="Volume"
-                app:layout_constraintEnd_toStartOf="@+id/etVolume"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvPackaging" />
-
-            <TextView
-                android:id="@+id/tvVoyageNumber"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="28dp"
-                android:layout_marginEnd="96dp"
-                android:text="Voyage number"
-                app:layout_constraintEnd_toStartOf="@+id/etVoyageNumber"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvVesselName" />
-
-            <EditText
-                android:id="@+id/etDeparture"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Port / Airport"
-                android:inputType="textPersonName"
-                app:layout_constraintBaseline_toBaselineOf="@+id/tvDeparture"
-                app:layout_constraintEnd_toEndOf="parent" />
-
-            <EditText
-                android:id="@+id/etConsignee"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Address"
-                android:inputType="textPersonName"
-                app:layout_constraintBaseline_toBaselineOf="@+id/tvConsignee"
-                app:layout_constraintEnd_toEndOf="parent" />
-
-            <TextView
-                android:id="@+id/tvArrival"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="28dp"
-                android:layout_marginEnd="96dp"
-                android:text="Port of discharge /\nArrival Airport"
-                app:layout_constraintEnd_toStartOf="@+id/etArrival"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvDeparture" />
-
-            <TextView
-                android:id="@+id/tvSailingDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="28dp"
-                android:layout_marginEnd="96dp"
-                android:text="Sailing Date"
-                app:layout_constraintEnd_toStartOf="@+id/etSailingDate"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvBillofLading" />
-
-            <EditText
-                android:id="@+id/etVolume"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Volume"
-                android:inputType="textPersonName"
-                app:layout_constraintBaseline_toBaselineOf="@+id/tvVolume"
-                app:layout_constraintEnd_toEndOf="parent" />
-
-            <TextView
-                android:id="@+id/tvPackaging"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="28dp"
-                android:layout_marginEnd="96dp"
-                android:text="Packaging"
-                app:layout_constraintEnd_toStartOf="@+id/etPackaging"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvDescription" />
-
-            <EditText
-                android:id="@+id/etDelivery"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Place of Delivery"
-                android:inputType="textPersonName"
-                app:layout_constraintBaseline_toBaselineOf="@+id/tvDelivery"
-                app:layout_constraintEnd_toEndOf="parent" />
-
-            <TextView
-                android:id="@+id/tvShipper"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="28dp"
-                android:layout_marginEnd="96dp"
-                android:text="Shipper\n(full address required)"
-                app:layout_constraintEnd_toStartOf="@+id/etShipper"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvSailingDate" />
-
-            <TextView
-                android:id="@+id/tvContainerNumber"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="28dp"
-                android:layout_marginEnd="96dp"
-                android:text="Container number"
-                app:layout_constraintEnd_toStartOf="@+id/etContainerNumber"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvConsignee" />
-
-            <EditText
-                android:id="@+id/etVessel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Vessel"
-                android:inputType="textPersonName"
-                app:layout_constraintBaseline_toBaselineOf="@+id/tvVesselName"
-                app:layout_constraintEnd_toEndOf="parent" />
-
-            <TextView
-                android:id="@+id/tvConsignee"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="28dp"
-                android:layout_marginEnd="96dp"
-                android:text="Consignee\n(full address required)"
-                app:layout_constraintEnd_toStartOf="@+id/etConsignee"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvShipper" />
-
-            <EditText
-                android:id="@+id/etContainerNumber"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="ABCD 123456 7"
-                android:inputType="textPersonName"
-                app:layout_constraintBaseline_toBaselineOf="@+id/tvContainerNumber"
-                app:layout_constraintEnd_toEndOf="parent" />
-
-            <TextView
-                android:id="@+id/tvDescription"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="28dp"
-                android:layout_marginEnd="96dp"
-                android:text="Description"
-                app:layout_constraintEnd_toStartOf="@+id/etDescription"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvContainerNumber" />
-
-            <TextView
-                android:id="@+id/tvWeight"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="28dp"
-                android:layout_marginEnd="96dp"
-                android:text="Weight"
-                app:layout_constraintEnd_toStartOf="@+id/etWeight"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvVolume" />
-
-            <TextView
-                android:id="@+id/tvVesselName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="28dp"
-                android:layout_marginEnd="96dp"
-                android:text="Vessel Name"
-                app:layout_constraintEnd_toStartOf="@+id/etVessel"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/tvDeparture"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="28dp"
-                android:layout_marginEnd="96dp"
-                android:text="Port of Loading /\nDeparture Airport"
-                app:layout_constraintEnd_toStartOf="@+id/etDeparture"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvVoyageNumber" />
-
-            <EditText
-                android:id="@+id/etReception"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Place of reception"
-                android:inputType="textPersonName"
-                app:layout_constraintBaseline_toBaselineOf="@+id/tvReception"
-                app:layout_constraintEnd_toEndOf="parent" />
-
-            <EditText
-                android:id="@+id/etWeight"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Weight"
-                android:inputType="textPersonName"
-                app:layout_constraintBaseline_toBaselineOf="@+id/tvWeight"
-                app:layout_constraintEnd_toEndOf="parent" />
-
-            <EditText
-                android:id="@+id/etSailingDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="11/3/2021"
-                android:inputType="textPersonName"
-                app:layout_constraintBaseline_toBaselineOf="@+id/tvSailingDate"
-                app:layout_constraintEnd_toEndOf="parent" />
-
-            <TextView
-                android:id="@+id/tvBillofLading"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="28dp"
-                android:layout_marginEnd="96dp"
-                android:text="Bill of lading number\n(MBL and HBL if required)\n/Air Waybill"
-                app:layout_constraintEnd_toStartOf="@+id/etBillofLading"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvDelivery" />
-
-            <EditText
-                android:id="@+id/etShipper"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Address"
-                android:inputType="textPersonName"
-                app:layout_constraintBaseline_toBaselineOf="@+id/tvShipper"
-                app:layout_constraintEnd_toEndOf="parent" />
-
-            <EditText
-                android:id="@+id/etVoyageNumber"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Voyage Number"
-                android:inputType="textPersonName"
-                app:layout_constraintBaseline_toBaselineOf="@+id/tvVoyageNumber"
-                app:layout_constraintEnd_toEndOf="parent" />
-
-            <TextView
-                android:id="@+id/tvDelivery"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="28dp"
-                android:layout_marginEnd="96dp"
-                android:text="Place of delivery"
-                app:layout_constraintEnd_toStartOf="@+id/etDelivery"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvReception" />
-
-            <TextView
-                android:id="@+id/tvReception"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="28dp"
-                android:layout_marginEnd="96dp"
-                android:text="Place of reception"
-                app:layout_constraintEnd_toStartOf="@+id/etReception"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvArrival" />
-
-            <EditText
-                android:id="@+id/etDescription"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Description"
-                android:inputType="textPersonName"
-                app:layout_constraintBaseline_toBaselineOf="@+id/tvDescription"
-                app:layout_constraintEnd_toEndOf="parent" />
-
-            <EditText
-                android:id="@+id/etPackaging"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Packaging"
-                android:inputType="textPersonName"
-                app:layout_constraintBaseline_toBaselineOf="@+id/tvPackaging"
-                app:layout_constraintEnd_toEndOf="parent" />
-
-            <Button
-                android:id="@+id/button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:text="Next"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.849"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etWeight"
-                app:layout_constraintVertical_bias="0.0" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </ScrollView>
-
-
+    <Button
+        android:id="@+id/bToManifest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.886"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.926" />
 </androidx.constraintlayout.widget.ConstraintLayout>
