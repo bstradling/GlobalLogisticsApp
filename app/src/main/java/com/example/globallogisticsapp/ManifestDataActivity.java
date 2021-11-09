@@ -18,13 +18,11 @@ public class ManifestDataActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manifest_data);
+        //Depending on the shipping type selected set the content view to a different activity xml.
 
         EditText etDate = findViewById(R.id.etSailingDate);
         SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
         etDate.setHint(dateFormat.format(new Date()));
-
-        EditText etConsignee = findViewById(R.id.etConsignee);
-        TextView tvConsignee = findViewById(R.id.tvConsignee);
 
         EditText etParty = findViewById(R.id.etParty);
         TextView tvParty = findViewById(R.id.tvParty);
@@ -35,8 +33,6 @@ public class ManifestDataActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked)
                 {
-                    etConsignee.setVisibility(View.VISIBLE);
-                    tvConsignee.setVisibility(View.VISIBLE);
 
                     etParty.setVisibility(View.VISIBLE);
                     tvParty.setVisibility(View.VISIBLE);
@@ -44,8 +40,6 @@ public class ManifestDataActivity extends AppCompatActivity {
                 }
                 else
                 {
-                    etConsignee.setVisibility(View.VISIBLE);
-                    tvConsignee.setVisibility(View.VISIBLE);
 
                     etParty.setVisibility(View.GONE);
                     tvParty.setVisibility(View.GONE);
