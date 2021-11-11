@@ -11,21 +11,21 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-162dp">
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="-76dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
             <EditText
-                android:id="@+id/etBillofLading"
+                android:id="@+id/etBillNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Bill of Lading"
                 android:inputType="textPersonName"
-                app:layout_constraintBaseline_toBaselineOf="@+id/tvBillofLading"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tvBillNumber"
                 app:layout_constraintEnd_toEndOf="parent" />
 
             <EditText
@@ -49,7 +49,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/etVolume"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvPackaging" />
+                app:layout_constraintTop_toBottomOf="@+id/tvUnits" />
 
             <TextView
                 android:id="@+id/tvVoyageNumber"
@@ -75,13 +75,13 @@
                 app:layout_constraintEnd_toEndOf="parent" />
 
             <EditText
-                android:id="@+id/etConsignee"
+                android:id="@+id/etConsigneeAddress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Address"
                 android:inputType="textPersonName"
-                app:layout_constraintBaseline_toBaselineOf="@+id/tvConsignee"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tvConsigneeAddress"
                 app:layout_constraintEnd_toEndOf="parent" />
 
             <TextView
@@ -108,7 +108,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/etSailingDate"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvBillofLading" />
+                app:layout_constraintTop_toBottomOf="@+id/tvBillNumber" />
 
             <EditText
                 android:id="@+id/etVolume"
@@ -131,7 +131,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/etPackaging"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvDescription" />
+                app:layout_constraintTop_toBottomOf="@+id/tvPieces" />
 
             <EditText
                 android:id="@+id/etDelivery"
@@ -144,17 +144,17 @@
                 app:layout_constraintEnd_toEndOf="parent" />
 
             <TextView
-                android:id="@+id/tvShipper"
+                android:id="@+id/tvShipperAddress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="28dp"
                 android:layout_marginEnd="96dp"
-                android:text="Shipper\n(full address required)"
-                app:layout_constraintEnd_toStartOf="@+id/etShipper"
+                android:text="Shipper\nAddress"
+                app:layout_constraintEnd_toStartOf="@+id/etShipperAddress"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvSailingDate" />
+                app:layout_constraintTop_toBottomOf="@+id/tvShipperName" />
 
             <TextView
                 android:id="@+id/tvContainerNumber"
@@ -167,7 +167,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/etContainerNumber"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvParty" />
+                app:layout_constraintTop_toBottomOf="@+id/tvIataCode" />
 
             <EditText
                 android:id="@+id/etVessel"
@@ -180,17 +180,17 @@
                 app:layout_constraintEnd_toEndOf="parent" />
 
             <TextView
-                android:id="@+id/tvConsignee"
+                android:id="@+id/tvConsigneeAddress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="28dp"
                 android:layout_marginEnd="96dp"
-                android:text="Consignee\n(full address required)"
-                app:layout_constraintEnd_toStartOf="@+id/etConsignee"
+                android:text="Consignee\nAddress"
+                app:layout_constraintEnd_toStartOf="@+id/etConsigneeAddress"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+                app:layout_constraintTop_toBottomOf="@+id/tvConsigneeName" />
 
             <EditText
                 android:id="@+id/etContainerNumber"
@@ -213,7 +213,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/svDescription"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvContainerNumber" />
+                app:layout_constraintTop_toBottomOf="@+id/tvAccountNumber" />
 
             <TextView
                 android:id="@+id/tvWeight"
@@ -222,11 +222,11 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="28dp"
                 android:layout_marginEnd="96dp"
-                android:text="Weight"
+                android:text="Chargeable Weight"
                 app:layout_constraintEnd_toStartOf="@+id/etWeight"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvVolume" />
+                app:layout_constraintTop_toBottomOf="@+id/tvDimensions" />
 
             <TextView
                 android:id="@+id/tvVesselName"
@@ -279,32 +279,32 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="11/3/2021"
+                android:hint="DD/MM/YYYY"
                 android:inputType="textPersonName"
                 app:layout_constraintBaseline_toBaselineOf="@+id/tvSailingDate"
                 app:layout_constraintEnd_toEndOf="parent" />
 
             <TextView
-                android:id="@+id/tvBillofLading"
+                android:id="@+id/tvBillNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="28dp"
                 android:layout_marginEnd="96dp"
                 android:text="Bill of lading number\n(MBL and HBL if required)\n/Air Waybill"
-                app:layout_constraintEnd_toStartOf="@+id/etBillofLading"
+                app:layout_constraintEnd_toStartOf="@+id/etBillNumber"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvDelivery" />
 
             <EditText
-                android:id="@+id/etShipper"
+                android:id="@+id/etShipperAddress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Address"
                 android:inputType="textPersonName"
-                app:layout_constraintBaseline_toBaselineOf="@+id/tvShipper"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tvShipperAddress"
                 app:layout_constraintEnd_toEndOf="parent" />
 
             <EditText
@@ -345,13 +345,14 @@
 
             <ScrollView
                 android:id="@+id/svDescription"
-                android:layout_width="208dp"
+                android:layout_width="210dp"
                 android:layout_height="90dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginBottom="28dp"
                 android:ems="10"
-                app:layout_constraintBottom_toTopOf="@id/etPackaging"
+                app:layout_constraintBottom_toTopOf="@id/etQuality"
                 app:layout_constraintEnd_toEndOf="@+id/etContainerNumber"
-                app:layout_constraintTop_toBottomOf="@+id/etContainerNumber">
+                app:layout_constraintTop_toBottomOf="@+id/etAccountNumber"
+                app:layout_constraintVertical_bias="0.0">
 
                 <EditText
                     android:id="@+id/etDescription"
@@ -391,7 +392,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.849"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etWeight"
+                app:layout_constraintTop_toBottomOf="@+id/etReference"
                 app:layout_constraintVertical_bias="0.0" />
 
             <TextView
@@ -406,7 +407,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/etParty"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvConsignee" />
+                app:layout_constraintTop_toBottomOf="@+id/tvConsigneeAccount" />
 
             <EditText
                 android:id="@+id/etParty"
@@ -424,13 +425,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="28dp"
                 android:layout_marginEnd="96dp"
                 android:text="Is notify Party the same as consignee?"
                 app:layout_constraintEnd_toStartOf="@+id/checkBox"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvShipper" />
+                app:layout_constraintTop_toBottomOf="@+id/tvShipperAccount" />
 
             <CheckBox
                 android:id="@+id/checkBox"
@@ -439,6 +440,421 @@
                 android:layout_marginEnd="24dp"
                 android:text="No"
                 app:layout_constraintBaseline_toBaselineOf="@+id/textView2"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/tvShipperName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="96dp"
+                android:text="Shipper Name"
+                app:layout_constraintEnd_toStartOf="@+id/etShipperName"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvArrivalDate" />
+
+            <EditText
+                android:id="@+id/etShipperName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Name"
+                android:inputType="textPersonName"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tvShipperName"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/tvConsigneeName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="96dp"
+                android:text="Consignee Name"
+                app:layout_constraintEnd_toStartOf="@+id/etConsigneeName"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+            <EditText
+                android:id="@+id/etConsigneeName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Name"
+                android:inputType="textPersonName"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tvConsigneeName"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/tvShipperAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="96dp"
+                android:text="Shipper\nAccount Number"
+                app:layout_constraintEnd_toStartOf="@+id/etShipperAccount"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvShipperAddress" />
+
+            <EditText
+                android:id="@+id/etShipperAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Account Number"
+                android:inputType="textPersonName"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tvShipperAccount"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/tvConsigneeAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="96dp"
+                android:text="Consignee\nAccount Number"
+                app:layout_constraintEnd_toStartOf="@+id/etConsigneeAccount"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvConsigneeAddress" />
+
+            <EditText
+                android:id="@+id/etConsigneeAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Account Number"
+                android:inputType="textPersonName"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tvConsigneeAccount"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/tvCarrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="96dp"
+                android:text="Issues Carrier"
+                app:layout_constraintEnd_toStartOf="@+id/etCarrier"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvParty" />
+
+            <TextView
+                android:id="@+id/tvCarrierAgentName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="96dp"
+                android:text="Carrier\nAgent Name"
+                app:layout_constraintEnd_toStartOf="@+id/etCarrierAgentName"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvCarrier" />
+
+            <TextView
+                android:id="@+id/tvCarrierAgentAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="96dp"
+                android:text="Carrier\nAgent Address"
+                app:layout_constraintEnd_toStartOf="@+id/etCarrierAgentAddress"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvCarrierAgentName" />
+
+            <EditText
+                android:id="@+id/etCarrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Carrier"
+                android:inputType="textPersonName"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tvCarrier"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <EditText
+                android:id="@+id/etCarrierAgentName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Name"
+                android:inputType="textPersonName"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tvCarrierAgentName"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <EditText
+                android:id="@+id/etCarrierAgentAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Address"
+                android:inputType="textPersonName"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tvCarrierAgentAddress"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/tvIataCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="96dp"
+                android:text="Agent Iata code"
+                app:layout_constraintEnd_toStartOf="@+id/etIataCode"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvCarrierAgentAddress" />
+
+            <EditText
+                android:id="@+id/etIataCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Iata Code"
+                android:inputType="textPersonName"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tvIataCode"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/tvAccountNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="96dp"
+                android:text="Account Number"
+                app:layout_constraintEnd_toStartOf="@+id/etAccountNumber"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvContainerNumber" />
+
+            <EditText
+                android:id="@+id/etAccountNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Account Number"
+                android:inputType="textPersonName"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tvAccountNumber"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/tvQuality"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="70dp"
+                android:layout_marginEnd="96dp"
+                android:text="Nature or Quality\nof goods"
+                app:layout_constraintEnd_toStartOf="@+id/etQuality"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDescription" />
+
+            <EditText
+                android:id="@+id/etQuality"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Nature/ Quality"
+                android:inputType="textPersonName"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tvQuality"
+                app:layout_constraintTop_toBottomOf="@id/svDescription"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/tvPieces"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="96dp"
+                android:text="Number of pieces"
+                app:layout_constraintEnd_toStartOf="@+id/etPieces"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvQuality" />
+
+            <EditText
+                android:id="@+id/etPieces"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Number of pieces"
+                android:inputType="textPersonName"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tvPieces"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/tvDimensions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="96dp"
+                android:text="Dimensions"
+                app:layout_constraintEnd_toStartOf="@+id/etDimensions"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvContainerType" />
+
+            <EditText
+                android:id="@+id/etDimensions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="3m, 3m, 3m"
+                android:inputType="textPersonName"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tvDimensions"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/tvUnits"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="96dp"
+                android:text="Units"
+                app:layout_constraintEnd_toStartOf="@+id/etUnits"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvWeight" />
+
+            <EditText
+                android:id="@+id/etUnits"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="kg, lbs"
+                android:inputType="textPersonName"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tvUnits"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/tvAccountingInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="96dp"
+                android:text="Accounting\nInformation"
+                app:layout_constraintEnd_toStartOf="@+id/etAccountingInfo"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvVolume" />
+
+            <EditText
+                android:id="@+id/etAccountingInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="(optional)"
+                android:inputType="textPersonName"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tvAccountingInfo"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/tvReference"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="96dp"
+                android:text="Reference\nNumber"
+                app:layout_constraintEnd_toStartOf="@+id/etReference"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvAccountingInfo" />
+
+            <EditText
+                android:id="@+id/etReference"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Reference Number"
+                android:inputType="textPersonName"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tvReference"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/tvContainerType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="96dp"
+                android:text="Container Type"
+                app:layout_constraintEnd_toStartOf="@+id/spContainerType"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvPackaging" />
+
+            <Spinner
+                android:id="@+id/spContainerType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="96dp"
+                android:spinnerMode="dropdown"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etPackaging" />
+
+            <TextView
+                android:id="@+id/tvDepartureDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="96dp"
+                android:text="Date of Departure"
+                app:layout_constraintEnd_toStartOf="@+id/etDepartureDate"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvSailingDate" />
+
+            <EditText
+                android:id="@+id/etDepartureDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="DD/MM/YYYY"
+                android:inputType="textPersonName"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tvDepartureDate"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/tvArrivalDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="96dp"
+                android:text="Date of Arrival"
+                app:layout_constraintEnd_toStartOf="@+id/etArrivalDate"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDepartureDate" />
+
+            <EditText
+                android:id="@+id/etArrivalDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="DD/MM/YYYY"
+                android:inputType="textPersonName"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tvArrivalDate"
                 app:layout_constraintEnd_toEndOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
