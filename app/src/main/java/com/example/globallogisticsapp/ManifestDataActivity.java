@@ -12,6 +12,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -21,7 +23,8 @@ public class ManifestDataActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manifest_data);
-        //Depending on the shipping type selected set the content view to a different activity xml.
+        //Depending on the shipping type selected set the manifest fields may change
+        Gson gson = new Gson();
 
         Intent intent = getIntent();
         boolean maritime = intent.getBooleanExtra("MARITIME", false);
