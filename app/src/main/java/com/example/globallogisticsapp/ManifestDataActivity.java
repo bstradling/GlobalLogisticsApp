@@ -126,25 +126,58 @@ public class ManifestDataActivity extends AppCompatActivity {
         }
         else if (road) {
             //Fields that will change depending on the shipping type
-            tvDeparture.setText("Port of Loading/\nDeparture Airport");
-            etDeparture.setHint("Port / Airport");
+            tvDeparture.setVisibility(View.GONE);
+            etDeparture.setVisibility(View.GONE);
 
-            tvArrival.setText("Port of Discharge/\nArrival Airport");
-            etArrival.setHint("Port / Airport");
+            tvArrival.setVisibility(View.GONE);
+            etArrival.setVisibility(View.GONE);
+
+            tvBillNumber.setText("Bill of Lading\n(BL) number");
+            etBillNumber.setHint("Bill of Lading");
+
+            EditText etShipperName = findViewById(R.id.etShipperName);
+            TextView tvShipperName = findViewById(R.id.tvShipperName);
+            etShipperName.setVisibility(View.GONE);
+            tvShipperName.setVisibility(View.GONE);
+
+            EditText etShipperAddress = findViewById(R.id.etShipperAddress);
+            TextView tvShipperAddress = findViewById(R.id.tvShipperAddress);
+            etShipperAddress.setVisibility(View.GONE);
+            tvShipperAddress.setVisibility(View.GONE);
+
+            EditText etShipperAccount = findViewById(R.id.etShipperAccount);
+            TextView tvShipperAccount = findViewById(R.id.tvShipperAccount);
+            etShipperAccount.setVisibility(View.GONE);
+            tvShipperAccount.setVisibility(View.GONE);
+
+            EditText etCarrier = findViewById(R.id.etCarrier);
+            TextView tvCarrier = findViewById(R.id.tvCarrier);
+            etCarrier.setVisibility(View.GONE);
+            tvCarrier.setVisibility(View.GONE);
+
+            EditText etAgentName = findViewById(R.id.etCarrierAgentName);
+            TextView tvAgentName = findViewById(R.id.tvCarrierAgentName);
+            etAgentName.setVisibility(View.GONE);
+            tvAgentName.setVisibility(View.GONE);
+
+            EditText etAgentAddress = findViewById(R.id.etCarrierAgentAddress);
+            TextView tvAgentAddress = findViewById(R.id.tvCarrierAgentAddress);
+            etAgentAddress.setVisibility(View.GONE);
+            tvAgentAddress.setVisibility(View.GONE);
 
             //Fields that will show when Air is selected
-            tvIataCode.setVisibility(View.VISIBLE);
-            etIataCode.setVisibility(View.VISIBLE);
+            tvIataCode.setVisibility(View.GONE);
+            etIataCode.setVisibility(View.GONE);
 
             //Fields that will show when Maritime is selected
-            tvVessel.setVisibility(View.VISIBLE);
-            etVessel.setVisibility(View.VISIBLE);
+            tvVessel.setVisibility(View.GONE);
+            etVessel.setVisibility(View.GONE);
 
-            tvVoyage.setVisibility(View.VISIBLE);
-            etVoyage.setVisibility(View.VISIBLE);
+            tvVoyage.setVisibility(View.GONE);
+            etVoyage.setVisibility(View.GONE);
 
-            tvSailingDate.setVisibility(View.VISIBLE);
-            etSailingDate.setVisibility(View.VISIBLE);
+            tvSailingDate.setVisibility(View.GONE);
+            etSailingDate.setVisibility(View.GONE);
 
             tvContainerNumber.setVisibility(View.VISIBLE);
             etContainerNumber.setVisibility(View.VISIBLE);
