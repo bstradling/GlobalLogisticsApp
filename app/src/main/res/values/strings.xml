@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">Global Logistics App</string>
+    <string name="title_activity_services">ServicesActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="services_customs">Customs Clearance</string>
+    <string name="services_transport">Transport</string>
+    <string name="services_discharge">Discharging</string>
+    <string name="services_loading">Loading</string>
+    <string name="services_manpower">Additional Manpower</string>
+    <string name="services_warehousing">Warehousing</string>
+    <string name="affirmative_answer">yes</string>
+    <string name="Service_Screen_Name">Additional Services</string>
 </resources>

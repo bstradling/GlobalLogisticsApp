@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ServicesActivity">
+
+    <CheckBox
+        android:id="@+id/checkBox11"
+        android:layout_width="176dp"
+        android:layout_height="33dp"
+        android:buttonTint="#8BC34A"
+        android:text="@string/services_manpower"
+        tools:layout_editor_absoluteX="76dp"
+        tools:layout_editor_absoluteY="494dp" />
+
+    <CheckBox
+        android:id="@+id/checkBox10"
+        android:layout_width="176dp"
+        android:layout_height="33dp"
+        android:buttonTint="#8BC34A"
+        android:clickable="true"
+        android:text="@string/services_manpower"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.413"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="230dp"
+        tools:visibility="visible" />
+
+    <CheckBox
+        android:id="@+id/checkBox9"
+        android:layout_width="176dp"
+        android:layout_height="33dp"
+        android:buttonTint="#8BC34A"
+        android:clickable="true"
+        android:text="@string/services_manpower"
+        tools:layout_editor_absoluteX="76dp"
+        tools:layout_editor_absoluteY="316dp" />
+
+    <CheckBox
+        android:id="@+id/checkBox3"
+        android:layout_width="166dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="44dp"
+        android:buttonTint="#8BC34A"
+        android:text="@string/services_customs"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/checkBox4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.154"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <CheckBox
+        android:layout_width="165dp"
+        android:layout_height="33dp"
+        android:layout_marginBottom="12dp"
+        android:buttonTint="#8BC34A"
+        android:clickable="true"
+        android:text="@string/services_transport"
+        app:layout_constraintBottom_toTopOf="@+id/checkBox10"
+        tools:layout_editor_absoluteX="30dp"
+        tools:visibility="visible" />
+
+    <CheckBox
+        android:id="@+id/checkBox5"
+        android:layout_width="162dp"
+        android:layout_height="32dp"
+        android:layout_marginBottom="12dp"
+        android:buttonTint="#8BC34A"
+        android:clickable="true"
+        android:text="@string/services_discharge"
+        app:layout_constraintBottom_toTopOf="@+id/checkBox9"
+        tools:layout_editor_absoluteX="30dp" />
+
+    <CheckBox
+        android:id="@+id/checkBox6"
+        android:layout_width="161dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="12dp"
+        android:buttonTint="#8BC34A"
+        android:text="@string/services_loading"
+        app:layout_constraintBottom_toTopOf="@+id/checkBox7"
+        tools:layout_editor_absoluteX="30dp" />
+
+    <CheckBox
+        android:id="@+id/checkBox7"
+        android:layout_width="176dp"
+        android:layout_height="33dp"
+        android:buttonTint="#8BC34A"
+        android:clickable="true"
+        android:text="@string/services_manpower"
+        tools:layout_editor_absoluteX="76dp"
+        tools:layout_editor_absoluteY="404dp" />
+
+    <CheckBox
+        android:id="@+id/checkBox8"
+        android:layout_width="162dp"
+        android:layout_height="31dp"
+        android:layout_marginBottom="12dp"
+        android:buttonTint="#8BC34A"
+        android:clickable="true"
+        android:text="@string/services_warehousing"
+        app:layout_constraintBottom_toTopOf="@+id/checkBox11"
+        tools:layout_editor_absoluteX="30dp" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/Service_Screen_Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/next"
+        tools:layout_editor_absoluteX="215dp"
+        tools:layout_editor_absoluteY="555dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
