@@ -16,9 +16,6 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 public class ManifestDataActivity extends AppCompatActivity {
     ShippingManifest data = new ShippingManifest();
     Gson gson = new Gson();
@@ -290,7 +287,7 @@ public class ManifestDataActivity extends AppCompatActivity {
         etParty = findViewById(R.id.etParty);
         TextView tvParty = findViewById(R.id.tvParty);
 
-        CheckBox checkBox = findViewById(R.id.checkBox);
+        CheckBox checkBox = findViewById(R.id.cbNotifyParty);
         checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -394,12 +391,12 @@ public class ManifestDataActivity extends AppCompatActivity {
     }
 
     public void openServices(View view) {
-        //Intent intent = new Intent(this, AdditionalServicesActivity.class);
+        Intent intent = new Intent(this, ServicesActivity.class);
 
 
         //intent.putExtra("JSON_DATA", data);
         //intent.putExtra("JSON", json);
 
-        //startActivity(intent);
+        startActivity(intent);
     }
 }

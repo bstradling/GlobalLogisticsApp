@@ -437,13 +437,13 @@
                 android:layout_marginTop="28dp"
                 android:layout_marginEnd="96dp"
                 android:text="Is notify Party the same as consignee?"
-                app:layout_constraintEnd_toStartOf="@+id/checkBox"
+                app:layout_constraintEnd_toStartOf="@+id/cbNotifyParty"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvShipperAccount" />
 
             <CheckBox
-                android:id="@+id/checkBox"
+                android:id="@+id/cbNotifyParty"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="24dp"
