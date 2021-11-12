@@ -29,6 +29,7 @@ public class ServicesActivity extends AppCompatActivity {
                 else
                 {
                     transportManpower.setVisibility(View.GONE);
+                    transportManpower.setChecked(false);
 
                 }
             }
@@ -47,6 +48,7 @@ public class ServicesActivity extends AppCompatActivity {
                 else
                 {
                     dischargeManpower.setVisibility(View.GONE);
+                    dischargeManpower.setChecked(false);
 
                 }
             }
@@ -65,6 +67,7 @@ public class ServicesActivity extends AppCompatActivity {
                 else
                 {
                     loadingManpower.setVisibility(View.GONE);
+                    loadingManpower.setChecked(false);
 
                 }
             }
@@ -83,6 +86,7 @@ public class ServicesActivity extends AppCompatActivity {
                 else
                 {
                     warehousingManpower.setVisibility(View.GONE);
+                    warehousingManpower.setChecked(false);
 
                 }
             }
