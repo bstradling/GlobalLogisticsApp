@@ -368,6 +368,10 @@ public class ManifestDataActivity extends AppCompatActivity {
         data.setDepartureDate(etDepartureDate.getText().toString());
         data.setDescription(etDescription.getText().toString());
         data.setDimensions(etDimensions.getText().toString());
+        data.setGrossWeight(etGrossWeight.getText().toString());
+        data.setIataCode(etIataCode.getText().toString());
+        data.setLicenceID(etLicence.getText().toString());
+        data.setNotifyParty(etParty.getText().toString());
         data.setNumberofPieces(etNumberofPieces.getText().toString());
         data.setPackaging(etPackaging.getText().toString());
         data.setQuality(etQuality.getText().toString());

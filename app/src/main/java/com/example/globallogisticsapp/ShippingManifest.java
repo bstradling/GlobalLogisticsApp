@@ -127,17 +127,11 @@ public class ShippingManifest {
         GrossWeight = grossWeight;
     }
 
-    public void setIataCode(String iataCode) {
-        IataCode = iataCode;
-    }
+    public void setIataCode(String iataCode) { IataCode = iataCode; }
 
-    public void setLicenceID(String licenceID) {
-        LicenceID = licenceID;
-    }
+    public void setLicenceID(String licenceID) { LicenceID = licenceID; }
 
-    public void setNotifyParty(String notifyParty) {
-        NotifyParty = notifyParty;
-    }
+    public void setNotifyParty(String notifyParty) { NotifyParty = notifyParty; }
 
     public void setNumberofPieces(String numberofPieces) {
         NumberofPieces = numberofPieces;
