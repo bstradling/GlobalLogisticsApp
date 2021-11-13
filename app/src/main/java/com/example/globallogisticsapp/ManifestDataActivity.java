@@ -397,8 +397,8 @@ public class ManifestDataActivity extends AppCompatActivity {
     public void openServices(View view) {
         Intent intent = new Intent(this, ServicesActivity.class);
 
-        //intent.putExtra("JSON_DATA", data);
-        //intent.putExtra("JSON", json);
+        intent.putExtra("JSON_DATA", data);
+        intent.putExtra("JSON", json);
         startActivity(intent);
     }
 }

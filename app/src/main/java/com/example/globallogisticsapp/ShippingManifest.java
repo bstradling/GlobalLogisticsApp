@@ -1,6 +1,8 @@
 package com.example.globallogisticsapp;
 
-public class ShippingManifest {
+import java.io.Serializable;
+
+public class ShippingManifest implements Serializable {
     private String ShippingType;
     private String Vessel;
     private String VoyageNumber;
@@ -40,6 +42,15 @@ public class ShippingManifest {
     private String AccountInfo;
     private String Reference;
     //Add the fields from the additional services page.
+    private String CustomsClearance;
+    private String Transport;
+    private String TransportAdditionalManpower;
+    private String Discharging;
+    private String DischargingAdditionalManpower;
+    private String Loading;
+    private String LoadingAdditionalManpower;
+    private String Warehousing;
+    private String WarehousingAdditionalManpower;
 
     //Consider adding the additional services fields here as well to already be part of the JSON
     //data. And consider changing the name from ShippingManifest to InvoiceData or something
@@ -47,6 +58,17 @@ public class ShippingManifest {
 
     public ShippingManifest(){
         //Default Construct
+
+        //Initialize the Additional Services fields to false or NO
+        CustomsClearance = "No";
+        Transport = "No";
+        TransportAdditionalManpower = "No";
+        Discharging = "No";
+        DischargingAdditionalManpower = "No";
+        Loading = "No";
+        LoadingAdditionalManpower= "No";
+        Warehousing = "No";
+        WarehousingAdditionalManpower = "No";
     }
 
     //Setter functions
@@ -103,6 +125,10 @@ public class ShippingManifest {
         ContainerType = containerType;
     }
 
+    public void setCustomsClearance(String customsClearance) {
+        CustomsClearance = customsClearance;
+    }
+
     public void setDelivery(String delivery) {
         Delivery = delivery;
     }
@@ -123,6 +149,14 @@ public class ShippingManifest {
         Dimensions = dimensions;
     }
 
+    public void setDischarging(String discharging) {
+        Discharging = discharging;
+    }
+
+    public void setDischargingAdditionalManpower(String dischargingAdditionalManpower) {
+        DischargingAdditionalManpower = dischargingAdditionalManpower;
+    }
+
     public void setGrossWeight(String grossWeight) {
         GrossWeight = grossWeight;
     }
@@ -130,6 +164,14 @@ public class ShippingManifest {
     public void setIataCode(String iataCode) { IataCode = iataCode; }
 
     public void setLicenceID(String licenceID) { LicenceID = licenceID; }
+
+    public void setLoading(String loading) {
+        Loading = loading;
+    }
+
+    public void setLoadingAdditionalManpower(String loadingAdditionalManpower) {
+        LoadingAdditionalManpower = loadingAdditionalManpower;
+    }
 
     public void setNotifyParty(String notifyParty) { NotifyParty = notifyParty; }
 
@@ -173,6 +215,14 @@ public class ShippingManifest {
         ShippingType = shippingType;
     }
 
+    public void setTransport(String transport) {
+        Transport = transport;
+    }
+
+    public void setTransportAdditionalManpower(String transportAdditionalManpower) {
+        TransportAdditionalManpower = transportAdditionalManpower;
+    }
+
     public void setTruck(String truck) {
         Truck = truck;
     }
@@ -191,6 +241,14 @@ public class ShippingManifest {
 
     public void setVoyageNumber(String voyageNumber) {
         VoyageNumber = voyageNumber;
+    }
+
+    public void setWarehousing(String warehousing) {
+        Warehousing = warehousing;
+    }
+
+    public void setWarehousingAdditionalManpower(String warehousingAdditionalManpower) {
+        WarehousingAdditionalManpower = warehousingAdditionalManpower;
     }
 
     public void setWeight(String weight) {
