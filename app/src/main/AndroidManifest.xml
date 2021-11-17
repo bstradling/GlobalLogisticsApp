@@ -10,13 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GlobalLogisticsApp">
         <activity
+            android:name=".InvoiceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EstimateActivity"
+            android:exported="false"
+            android:parentActivityName=".ServicesActivity"/>
+        <activity
             android:name=".ServicesActivity"
-            android:parentActivityName=".ManifestDataActivity"
-            android:exported="false">
-
+            android:exported="false"
+            android:parentActivityName=".ManifestDataActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ManifestDataActivity"/>
+                android:value=".ManifestDataActivity" />
         </activity>
         <activity
             android:name=".ManifestDataActivity"

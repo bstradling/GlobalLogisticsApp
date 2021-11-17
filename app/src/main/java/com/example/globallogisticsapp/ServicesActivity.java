@@ -181,10 +181,10 @@ public class ServicesActivity extends AppCompatActivity {
     }
 
     public void openEstimate(View view) {
-        //Intent intent = new Intent(this, EstimateActivity.class);
+        Intent intent = new Intent(this, EstimateActivity.class);
 
         //intent.putExtra("JSON_DATA", data);
         //intent.putExtra("JSON", json);
-        //startActivity(intent);
+        startActivity(intent);
     }
 }

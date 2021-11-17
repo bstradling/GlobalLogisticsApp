@@ -9,5 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="cream">#E7DCAB</color>
     <color name="blue">#0000FF</color>
+    <color name="logoComplement">#847E40</color>
     <color name="logoBlue">#404684</color>
 </resources>
