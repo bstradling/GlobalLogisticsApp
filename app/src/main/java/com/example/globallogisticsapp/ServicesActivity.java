@@ -16,6 +16,7 @@ public class ServicesActivity extends AppCompatActivity {
     Gson gson = new Gson();
 
     String json;
+    String shippingType;
     ShippingManifest data;
 
     CheckBox customs;
@@ -36,6 +37,7 @@ public class ServicesActivity extends AppCompatActivity {
         Intent intent = getIntent();
         json = intent.getStringExtra("JSON");
         data = (ShippingManifest) intent.getSerializableExtra("JSON_DATA");
+        shippingType = intent.getStringExtra("SHIPPING_TYPE");
 
         //Create Checkboxes for the Additional Services
         transportManpower = findViewById(R.id.cbTransportManpower);
@@ -127,6 +129,14 @@ public class ServicesActivity extends AppCompatActivity {
             }
         });
 
+        Button toManifest = (Button) findViewById(R.id.bBackToManifest);
+        toManifest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openManifest(v);
+            }
+        });
+
     }
 
     public void saveServices() {
@@ -185,6 +195,13 @@ public class ServicesActivity extends AppCompatActivity {
 
         intent.putExtra("JSON_DATA", data);
         intent.putExtra("JSON", json);
+        intent.putExtra("SHIPPING_TYPE",shippingType);
+        startActivity(intent);
+    }
+
+    public void openManifest(View view) {
+        Intent intent = new Intent(this, ManifestDataActivity.class);
+        intent.putExtra("SHIPPING_TYPE",shippingType);
         startActivity(intent);
     }
 }

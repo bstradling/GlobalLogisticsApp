@@ -11,7 +11,8 @@
         android:theme="@style/Theme.GlobalLogisticsApp">
         <activity
             android:name=".InvoiceActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".EstimateActivity"/>
         <activity
             android:name=".EstimateActivity"
             android:exported="false"

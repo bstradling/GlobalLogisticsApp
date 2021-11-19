@@ -74,9 +74,10 @@ public class ManifestDataActivity extends AppCompatActivity {
         //Depending on the shipping type selected set the manifest fields may change
 
         Intent intent = getIntent();
-        boolean maritime = intent.getBooleanExtra("MARITIME", false);
-        boolean air = intent.getBooleanExtra("AIR", false);
-        boolean road = intent.getBooleanExtra("ROAD", false);
+        //boolean maritime = intent.getBooleanExtra("MARITIME", false);
+        //boolean air = intent.getBooleanExtra("AIR", false);
+        //boolean road = intent.getBooleanExtra("ROAD", false);
+        shippingType = intent.getStringExtra("SHIPPING_TYPE");
 
         //Fields that will change depending on the shipping type
         TextView tvDeparture = findViewById(R.id.tvDeparture);
@@ -136,150 +137,155 @@ public class ManifestDataActivity extends AppCompatActivity {
         etLicence = findViewById(R.id.etLicenseID);
         TextView tvLicence = findViewById(R.id.tvLicenseID);
 
-        if (maritime) {
-            shippingType = "Maritime";
-            //Fields that will change depending on the shipping type
-            tvDeparture.setText("Port of Loading");
-            etDeparture.setHint("Port");
+        //shippingType = "Maritime"
+        switch (shippingType) {
+            case "Maritime":
 
-            tvArrival.setText("Port of discharge");
-            etArrival.setHint("Port");
+                //Fields that will change depending on the shipping type
+                tvDeparture.setText("Port of Loading");
+                etDeparture.setHint("Port");
 
-            tvBillNumber.setText("Bill of Lading\n(BL) number");
-            etBillNumber.setHint("Bill of Lading");
+                tvArrival.setText("Port of discharge");
+                etArrival.setHint("Port");
 
-            //Fields that will show when Air is selected
-            tvIataCode.setVisibility(View.GONE);
-            etIataCode.setVisibility(View.GONE);
+                tvBillNumber.setText("Bill of Lading\n(BL) number");
+                etBillNumber.setHint("Bill of Lading");
 
-            //Fields that will show when Maritime is selected
-            tvVessel.setVisibility(View.VISIBLE);
-            etVessel.setVisibility(View.VISIBLE);
+                //Fields that will show when Air is selected
+                tvIataCode.setVisibility(View.GONE);
+                etIataCode.setVisibility(View.GONE);
 
-            tvVoyage.setVisibility(View.VISIBLE);
-            etVoyage.setVisibility(View.VISIBLE);
+                //Fields that will show when Maritime is selected
+                tvVessel.setVisibility(View.VISIBLE);
+                etVessel.setVisibility(View.VISIBLE);
 
-            tvSailingDate.setVisibility(View.VISIBLE);
-            etSailingDate.setVisibility(View.VISIBLE);
+                tvVoyage.setVisibility(View.VISIBLE);
+                etVoyage.setVisibility(View.VISIBLE);
 
-            tvContainerNumber.setVisibility(View.VISIBLE);
-            etContainerNumber.setVisibility(View.VISIBLE);
+                tvSailingDate.setVisibility(View.VISIBLE);
+                etSailingDate.setVisibility(View.VISIBLE);
 
-            tvContainerType.setVisibility(View.VISIBLE);
-            dropdown.setVisibility(View.VISIBLE);
+                tvContainerNumber.setVisibility(View.VISIBLE);
+                etContainerNumber.setVisibility(View.VISIBLE);
 
-            //Fields that will show when Road is selected
-            etTruckID.setVisibility(View.GONE);
-            tvTruckID.setVisibility(View.GONE);
+                tvContainerType.setVisibility(View.VISIBLE);
+                dropdown.setVisibility(View.VISIBLE);
 
-            etGrossWeight.setVisibility(View.GONE);
-            tvGrossWeight.setVisibility(View.GONE);
+                //Fields that will show when Road is selected
+                etTruckID.setVisibility(View.GONE);
+                tvTruckID.setVisibility(View.GONE);
 
-            etLicence.setVisibility(View.GONE);
-            tvLicence.setVisibility(View.GONE);
-        }
+                etGrossWeight.setVisibility(View.GONE);
+                tvGrossWeight.setVisibility(View.GONE);
 
-        else if (air) {
-            shippingType = "Air";
-            //Fields that will change depending on the shipping type
-            tvDeparture.setText("Departure Airport");
-            etDeparture.setHint("Airport");
+                etLicence.setVisibility(View.GONE);
+                tvLicence.setVisibility(View.GONE);
+                break;
 
-            tvArrival.setText("Arrival Airport");
-            etArrival.setHint("Airport");
+            //shippingType = "Air"
+            case "Air":
 
-            tvBillNumber.setText("Airway Bill\n(AWB) number");
-            etBillNumber.setHint("Airway Bill");
+                //Fields that will change depending on the shipping type
+                tvDeparture.setText("Departure Airport");
+                etDeparture.setHint("Airport");
 
-            //Fields that will show when Air is selected
-            tvIataCode.setVisibility(View.VISIBLE);
-            etIataCode.setVisibility(View.VISIBLE);
+                tvArrival.setText("Arrival Airport");
+                etArrival.setHint("Airport");
 
-            //Fields that will show when Maritime is selected
-            tvVessel.setVisibility(View.GONE);
-            etVessel.setVisibility(View.GONE);
+                tvBillNumber.setText("Airway Bill\n(AWB) number");
+                etBillNumber.setHint("Airway Bill");
 
-            tvVoyage.setVisibility(View.GONE);
-            etVoyage.setVisibility(View.GONE);
+                //Fields that will show when Air is selected
+                tvIataCode.setVisibility(View.VISIBLE);
+                etIataCode.setVisibility(View.VISIBLE);
 
-            tvSailingDate.setVisibility(View.GONE);
-            etSailingDate.setVisibility(View.GONE);
+                //Fields that will show when Maritime is selected
+                tvVessel.setVisibility(View.GONE);
+                etVessel.setVisibility(View.GONE);
 
-            tvContainerNumber.setVisibility(View.GONE);
-            etContainerNumber.setVisibility(View.GONE);
+                tvVoyage.setVisibility(View.GONE);
+                etVoyage.setVisibility(View.GONE);
 
-            tvContainerType.setVisibility(View.GONE);
-            dropdown.setVisibility(View.GONE);
+                tvSailingDate.setVisibility(View.GONE);
+                etSailingDate.setVisibility(View.GONE);
 
-            //Fields that will show when Road is selected
-            etTruckID.setVisibility(View.GONE);
-            tvTruckID.setVisibility(View.GONE);
+                tvContainerNumber.setVisibility(View.GONE);
+                etContainerNumber.setVisibility(View.GONE);
 
-            etGrossWeight.setVisibility(View.GONE);
-            tvGrossWeight.setVisibility(View.GONE);
+                tvContainerType.setVisibility(View.GONE);
+                dropdown.setVisibility(View.GONE);
 
-            etLicence.setVisibility(View.GONE);
-            tvLicence.setVisibility(View.GONE);
-        }
-        else if (road) {
-            shippingType = "Road";
-            //Fields that will change depending on the shipping type
-            tvDeparture.setVisibility(View.GONE);
-            etDeparture.setVisibility(View.GONE);
+                //Fields that will show when Road is selected
+                etTruckID.setVisibility(View.GONE);
+                tvTruckID.setVisibility(View.GONE);
 
-            tvArrival.setVisibility(View.GONE);
-            etArrival.setVisibility(View.GONE);
+                etGrossWeight.setVisibility(View.GONE);
+                tvGrossWeight.setVisibility(View.GONE);
 
-            tvBillNumber.setText("Bill of Lading\n(BL) number");
-            etBillNumber.setHint("Bill of Lading");
+                etLicence.setVisibility(View.GONE);
+                tvLicence.setVisibility(View.GONE);
+                break;
+            //shippingType = "Road"
+            case "Road":
 
-            etShipperName.setVisibility(View.GONE);
-            tvShipperName.setVisibility(View.GONE);
+                //Fields that will change depending on the shipping type
+                tvDeparture.setVisibility(View.GONE);
+                etDeparture.setVisibility(View.GONE);
 
-            etShipperAddress.setVisibility(View.GONE);
-            tvShipperAddress.setVisibility(View.GONE);
+                tvArrival.setVisibility(View.GONE);
+                etArrival.setVisibility(View.GONE);
 
-            etShipperAccount.setVisibility(View.GONE);
-            tvShipperAccount.setVisibility(View.GONE);
+                tvBillNumber.setText("Bill of Lading\n(BL) number");
+                etBillNumber.setHint("Bill of Lading");
 
-            etCarrier.setVisibility(View.GONE);
-            tvCarrier.setVisibility(View.GONE);
+                etShipperName.setVisibility(View.GONE);
+                tvShipperName.setVisibility(View.GONE);
 
-            etAgentName.setVisibility(View.GONE);
-            tvAgentName.setVisibility(View.GONE);
+                etShipperAddress.setVisibility(View.GONE);
+                tvShipperAddress.setVisibility(View.GONE);
 
-            etAgentAddress.setVisibility(View.GONE);
-            tvAgentAddress.setVisibility(View.GONE);
+                etShipperAccount.setVisibility(View.GONE);
+                tvShipperAccount.setVisibility(View.GONE);
 
-            //Fields that will show when Air is selected
-            tvIataCode.setVisibility(View.GONE);
-            etIataCode.setVisibility(View.GONE);
+                etCarrier.setVisibility(View.GONE);
+                tvCarrier.setVisibility(View.GONE);
 
-            //Fields that will show when Maritime is selected
-            tvVessel.setVisibility(View.GONE);
-            etVessel.setVisibility(View.GONE);
+                etAgentName.setVisibility(View.GONE);
+                tvAgentName.setVisibility(View.GONE);
 
-            tvVoyage.setVisibility(View.GONE);
-            etVoyage.setVisibility(View.GONE);
+                etAgentAddress.setVisibility(View.GONE);
+                tvAgentAddress.setVisibility(View.GONE);
 
-            tvSailingDate.setVisibility(View.GONE);
-            etSailingDate.setVisibility(View.GONE);
+                //Fields that will show when Air is selected
+                tvIataCode.setVisibility(View.GONE);
+                etIataCode.setVisibility(View.GONE);
 
-            tvContainerNumber.setVisibility(View.VISIBLE);
-            etContainerNumber.setVisibility(View.VISIBLE);
+                //Fields that will show when Maritime is selected
+                tvVessel.setVisibility(View.GONE);
+                etVessel.setVisibility(View.GONE);
 
-            tvContainerType.setVisibility(View.VISIBLE);
-            dropdown.setVisibility(View.VISIBLE);
+                tvVoyage.setVisibility(View.GONE);
+                etVoyage.setVisibility(View.GONE);
 
-            //Fields that will show when Road is selected
-            etTruckID.setVisibility(View.VISIBLE);
-            tvTruckID.setVisibility(View.VISIBLE);
+                tvSailingDate.setVisibility(View.GONE);
+                etSailingDate.setVisibility(View.GONE);
 
-            etGrossWeight.setVisibility(View.VISIBLE);
-            tvGrossWeight.setVisibility(View.VISIBLE);
+                tvContainerNumber.setVisibility(View.VISIBLE);
+                etContainerNumber.setVisibility(View.VISIBLE);
 
-            etLicence.setVisibility(View.VISIBLE);
-            tvLicence.setVisibility(View.VISIBLE);
+                tvContainerType.setVisibility(View.VISIBLE);
+                dropdown.setVisibility(View.VISIBLE);
+
+                //Fields that will show when Road is selected
+                etTruckID.setVisibility(View.VISIBLE);
+                tvTruckID.setVisibility(View.VISIBLE);
+
+                etGrossWeight.setVisibility(View.VISIBLE);
+                tvGrossWeight.setVisibility(View.VISIBLE);
+
+                etLicence.setVisibility(View.VISIBLE);
+                tvLicence.setVisibility(View.VISIBLE);
+                break;
         }
 
 
@@ -399,6 +405,7 @@ public class ManifestDataActivity extends AppCompatActivity {
 
         intent.putExtra("JSON_DATA", data);
         intent.putExtra("JSON", json);
+        intent.putExtra("SHIPPING_TYPE", shippingType);
         startActivity(intent);
     }
 }

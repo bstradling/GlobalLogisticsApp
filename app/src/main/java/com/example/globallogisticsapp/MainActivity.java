@@ -58,10 +58,20 @@ public class MainActivity extends AppCompatActivity {
         maritime = rbMaritime.isChecked();
         air = rbAir.isChecked();
         road = rbRoad.isChecked();
+        String shipping;
 
-        intent.putExtra("MARITIME", maritime);
-        intent.putExtra("AIR", air);
-        intent.putExtra("ROAD", road);
+        if (maritime){
+            shipping = "Maritime";
+            intent.putExtra("SHIPPING_TYPE", shipping);
+        }
+        else if (air){
+            shipping = "Air";
+            intent.putExtra("SHIPPING_TYPE", shipping);
+        }
+        else{
+            shipping = "Road";
+            intent.putExtra("SHIPPING_TYPE", shipping);
+        }
 
         //Log
         Log.d(this.getLocalClassName(), "Creating intent with " +
