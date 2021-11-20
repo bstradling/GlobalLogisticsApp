@@ -24,7 +24,6 @@ public class EstimateActivity extends AppCompatActivity {
     private String output;
     private String shippingType;
     private ShippingManifest data;
-    private ListView listviewEstimate;
 
 
     @Override
@@ -50,19 +49,38 @@ public class EstimateActivity extends AppCompatActivity {
          * estimate and invoice activities.
          ******************************************************************/
 
+        output = output.replace("AccountInfo:","Account Info:");
+        output = output.replace("AccountNumber:","Account Number:");
+        output = output.replace("ArrivalDate:","Arrival Date:");
+        output = output.replace("CarrierAgentAddress:","Carrier Agent Address:");
+        output = output.replace("CarrierAgentName:","Carrier Agent Name:");
+        output = output.replace("Consignee","Consignee ");
+        output = output.replace("CustomsClearance:","Customs Clearance:");
+        output = output.replace("Delivery:","Place of Delivery:");
+        output = output.replace("DepartureDate:","Departure Date:");
+        output = output.replace("DischargingAdditionalManpower:","(Discharging)\nAdditional Manpower:");
+        output = output.replace("LoadingAdditionalManpower:","(Loading)\nAdditional Manpower:");
+        output = output.replace("NotifyParty:","Notify Party:");
+        output = output.replace("NumberofPieces:","Number of Pieces:");
+        output = output.replace("Reception:","Place of Reception:");
+        output = output.replace("Shipper","Shipper ");
+        output = output.replace("ShippingType:","Shipping Type:");
+        output = output.replace("TransportAdditionalManpower:","(Transport)\nAdditional Manpower:");
+        output = output.replace("WarehousingAdditionalManpower:","(Warehousing)\nAdditional Manpower:");
+
         //shippingType = "Maritime"
         switch (shippingType) {
             case "Maritime":
 
                 //Fields that will change depending on the shipping type
-                output = output.replace("Departure", "Port of Loading");
+                output = output.replace("Departure:", "Port of Loading:");
 
                 output = output.replace("Arrival:", "Port of discharge:");
 
                 output = output.replace("BillNumber", "Bill of Lading");
 
                 //Fields that will show when Air is selected
-                output = output.replace("IataCode:\n", "");
+                output = output.replace("IataCode: \n\n", "");
 
                 //Fields that will show when Maritime is selected
                 output = output.replace("SailingDate", "Sailing Date");
@@ -74,86 +92,86 @@ public class EstimateActivity extends AppCompatActivity {
                 output = output.replace("VoyageNumber","Voyage Number");
 
                 //Fields that will show when Road is selected
-                output = output.replace("Truck:\n", "");
+                output = output.replace("Truck: \n\n", "");
 
-                output = output.replace("GrossWeight:\n", "");
+                output = output.replace("GrossWeight: \n\n", "");
 
-                output = output.replace("LicenceID:\n", "");
+                output = output.replace("LicenceID: \n\n", "");
                 break;
 
             //shippingType = "Air"
             case "Air":
 
                 //Fields that will change depending on the shipping type
-                output = output.replace("Departure", "Departure Airport");//tvDeparture.setText("Departure Airport");
+                output = output.replace("Departure:", "Departure Airport:");
 
-                output = output.replace("Arrival", "Arrival Airport");//tvArrival.setText("Arrival Airport");
+                output = output.replace("Arrival:", "Arrival Airport:");
 
-                output = output.replace("BillNumber", "Airway Bill(AWB)");//tvBillNumber.setText("Airway Bill\n(AWB) number");
+                output = output.replace("BillNumber", "Airway Bill(AWB)");
 
                 //Fields that will show when Air is selected
-                output = output.replace("IataCode","Iata Code");//tvIataCode.setVisibility(View.VISIBLE);
+                output = output.replace("IataCode","Iata Code");
 
                 //Fields that will show when Maritime is selected
-                output = output.replace("Vessel:\n","");//tvVessel.setVisibility(View.GONE);
+                output = output.replace("Vessel: \n\n","");
 
-                output = output.replace("VoyageNumber:\n","");//tvVoyage.setVisibility(View.GONE);
+                output = output.replace("VoyageNumber: \n\n","");
 
-                output = output.replace("SailingDate:\n","");//tvSailingDate.setVisibility(View.GONE);
+                output = output.replace("SailingDate: \n\n","");
 
-                output = output.replace("ContainerNumber:\n","");//tvContainerNumber.setVisibility(View.GONE);
+                output = output.replace("ContainerNumber: \n\n","");
 
-                output = output.replace("ContainerType:40 Dry\n","");//tvContainerType.setVisibility(View.GONE);
+                output = output.replace("ContainerType:40 Dry\n\n","");
 
                 //Fields that will show when Road is selected
-                output = output.replace("Truck:\n", "");
+                output = output.replace("Truck: \n\n", "");
 
-                output = output.replace("GrossWeight:\n", "");
+                output = output.replace("GrossWeight: \n\n", "");
 
-                output = output.replace("LicenceID:\n", "");
+                output = output.replace("LicenceID: \n\n", "");
                 break;
             //shippingType = "Road"
             case "Road":
 
                 //Fields that will change depending on the shipping type
-                output = output.replace("Departure:\n","");//tvDeparture.setVisibility(View.GONE);
+                output = output.replace("Departure: \n\n","");
 
-                output = output.replace("Arrival:\n","");//tvArrival.setVisibility(View.GONE);
+                output = output.replace("Arrival: \n\n","");
 
-                output = output.replace("BillNumber","Bill of Lading");//tvBillNumber.setText("Bill of Lading\n(BL) number");
+                output = output.replace("BillNumber","Bill of Lading");
 
-                output = output.replace("ShipperName:\n","");//tvShipperName.setVisibility(View.GONE);
+                output = output.replace("Shipper Name: \n\n","");
 
-                output = output.replace("ShipperAddress:\n","");//tvShipperAddress.setVisibility(View.GONE);
+                output = output.replace("Shipper Address: \n\n","");
 
-                output = output.replace("ShipperAccount:\n","");//tvShipperAccount.setVisibility(View.GONE);
+                output = output.replace("Shipper Account: \n\n","");
 
-                output = output.replace("Carrier:\n","");//tvCarrier.setVisibility(View.GONE);
+                output = output.replace("Carrier: \n\n","");
 
-                output = output.replace("CarrierAgentName:\n","");//tvAgentName.setVisibility(View.GONE);
+                output = output.replace("Carrier Agent Name: \n\n","");
 
-                output = output.replace("CarrierAgentAddress:\n","");//tvAgentAddress.setVisibility(View.GONE);
+                output = output.replace("Carrier Agent Address: \n\n","");
 
                 //Fields that will show when Air is selected
-                output = output.replace("IataCode:\n","");//tvIataCode.setVisibility(View.GONE);
+                output = output.replace("IataCode: \n\n","");
 
                 //Fields that will show when Maritime is selected
-                output = output.replace("Vessel:\n","");//tvVessel.setVisibility(View.GONE);
+                output = output.replace("Vessel: \n\n","");
 
-                output = output.replace("VoyageNumber:\n","");//tvVoyage.setVisibility(View.GONE);
+                output = output.replace("VoyageNumber: \n\n","");
 
-                output = output.replace("SailingDate:\n","");//tvSailingDate.setVisibility(View.GONE);
+                output = output.replace("SailingDate: \n\n","");
 
-                output = output.replace("ContainerNumber","Container Number");//tvContainerNumber.setVisibility(View.VISIBLE);
+                output = output.replace("ContainerNumber","Container Number");
 
-                output = output.replace("ContainerType","Container Type");//tvContainerType.setVisibility(View.VISIBLE);
+                output = output.replace("ContainerType","Container Type");
 
                 //Fields that will show when Road is selected
-                output = output.replace("TruckID","Truck ID");//tvTruckID.setVisibility(View.VISIBLE);
+                output = output.replace("Truck","Truck ID");
 
-                output = output.replace("GrossWeight","Gross Weight");//tvGrossWeight.setVisibility(View.VISIBLE);
+                output = output.replace("GrossWeight","Gross Weight");
 
-                output = output.replace("LicenceID","Licence ID");//tvLicence.setVisibility(View.VISIBLE);
+                output = output.replace("LicenceID","Licence ID");
                 break;
         }
 
@@ -164,7 +182,7 @@ public class EstimateActivity extends AppCompatActivity {
          * End of editing block.
          ************************************************************/
 
-        listviewEstimate = findViewById(R.id.listviewEstimate);
+        ListView listviewEstimate = findViewById(R.id.listviewEstimate);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, Collections.singletonList(output));

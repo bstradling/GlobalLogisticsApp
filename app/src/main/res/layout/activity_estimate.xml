@@ -10,7 +10,7 @@
         android:id="@+id/bToInvoice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Invoice"
+        android:text="@string/invoice"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.949"
@@ -19,10 +19,10 @@
         app:layout_constraintVertical_bias="0.976" />
 
     <TextView
-        android:id="@+id/tvInvoice"
+        android:id="@+id/tvEstimate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Estimate"
+        android:text="@string/estimate"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -56,7 +56,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvInvoice"
+        app:layout_constraintTop_toBottomOf="@+id/tvEstimate"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/global_logistics_logo" />
 
@@ -64,7 +64,7 @@
         android:id="@+id/bBackToServices"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Back"
+        android:text="@string/back_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.075"

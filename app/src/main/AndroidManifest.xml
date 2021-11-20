@@ -11,20 +11,13 @@
         android:theme="@style/Theme.GlobalLogisticsApp">
         <activity
             android:name=".InvoiceActivity"
-            android:exported="false"
-            android:parentActivityName=".EstimateActivity"/>
+            android:exported="false" />
         <activity
             android:name=".EstimateActivity"
-            android:exported="false"
-            android:parentActivityName=".ServicesActivity"/>
+            android:exported="false" />
         <activity
             android:name=".ServicesActivity"
-            android:exported="false"
-            android:parentActivityName=".ManifestDataActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ManifestDataActivity" />
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".ManifestDataActivity"
             android:parentActivityName=".MainActivity">
