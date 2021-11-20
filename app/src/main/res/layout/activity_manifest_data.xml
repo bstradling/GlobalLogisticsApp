@@ -244,7 +244,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/etVessel"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/tvShippingManifest" />
 
             <TextView
                 android:id="@+id/tvDeparture"
@@ -929,6 +929,18 @@
                 android:inputType="textPersonName"
                 app:layout_constraintBaseline_toBaselineOf="@+id/tvLicenseID"
                 app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/tvShippingManifest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Shipping\nManifest"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

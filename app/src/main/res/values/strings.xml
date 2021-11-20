@@ -75,4 +75,8 @@
     <string name="drivers_license">Driver\'s License ID</string>
     <string name="gross_weight_hint">Truck + Load</string>
     <string name="drivers_license_hint">000 000 000</string>
+    <string name="shipping_type_header">Select type of shipping</string>
+    <string name="maritime">Maritime</string>
+    <string name="air">Air</string>
+    <string name="road">Road</string>
 </resources>
