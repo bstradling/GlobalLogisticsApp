@@ -1,6 +1,7 @@
 package com.example.globallogisticsapp;
 
 import java.io.Serializable;
+import java.text.DecimalFormat;
 
 public class ShippingManifest implements Serializable {
     private String ShippingType;
@@ -29,12 +30,12 @@ public class ShippingManifest implements Serializable {
     private String CarrierAgentAddress;
     private String IataCode;
     private String ContainerNumber;
-    private String AccountNumber;
     private String Description;
     private String Quality;
     private String NumberofPieces;
     private String Packaging;
     private String ContainerType;
+    private String ContainerLoad;
     private String Dimensions;
     private String Weight;
     private String Units;
@@ -51,6 +52,8 @@ public class ShippingManifest implements Serializable {
     private String LoadingAdditionalManpower;
     private String Warehousing;
     private String WarehousingAdditionalManpower;
+
+    private static final DecimalFormat df = new DecimalFormat("0.00");
 
     //Consider adding the additional services fields here as well to already be part of the JSON
     //data. And consider changing the name from ShippingManifest to InvoiceData or something
@@ -69,13 +72,10 @@ public class ShippingManifest implements Serializable {
         LoadingAdditionalManpower= "No";
         Warehousing = "No";
         WarehousingAdditionalManpower = "No";
+        Volume = "0 cubic meters\n\n";
     }
 
     //Setter functions
-
-    public void setAccountNumber(String accountNumber) {
-        AccountNumber = accountNumber;
-    }
 
     public void setAccountInfo(String accountInfo) {
         AccountInfo = accountInfo;
@@ -117,6 +117,10 @@ public class ShippingManifest implements Serializable {
         ConsigneeName = consigneeName;
     }
 
+    public void setContainerLoad(String containerLoad) {
+        ContainerLoad = containerLoad;
+    }
+
     public void setContainerNumber(String containerNumber) {
         ContainerNumber = containerNumber;
     }
@@ -145,6 +149,9 @@ public class ShippingManifest implements Serializable {
         Description = description;
     }
 
+    public void setDimensions(String dimensions1, String dimensions2, String dimensions3) {
+        Dimensions = dimensions1 + "m, " + dimensions2 + "m, " + dimensions3 + "m";
+    }
     public void setDimensions(String dimensions) {
         Dimensions = dimensions;
     }
@@ -235,8 +242,12 @@ public class ShippingManifest implements Serializable {
         Vessel = vessel;
     }
 
-    public void setVolume(String volume) {
-        Volume = volume;
+    public void setVolume(float dim1, float dim2, float dim3) {
+        float value = dim1 * dim2 * dim3;
+        Volume = df.format(value) + " CBM";
+    }
+    public void setVolume(float v) {
+        Volume = df.format(v) + " CBM";
     }
 
     public void setVoyageNumber(String voyageNumber) {

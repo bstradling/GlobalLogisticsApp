@@ -85,9 +85,13 @@ public class EstimateActivity extends AppCompatActivity {
                 //Fields that will show when Maritime is selected
                 output = output.replace("SailingDate", "Sailing Date");
 
+                output = output.replace("ContainerLoad", "Container Load");
+                output = output.replace(": Load", ":");
+
                 output = output.replace("ContainerNumber", "Container Number");
 
                 output = output.replace("ContainerType", "Container Type");
+                output = output.replace(": Type", ":");
 
                 output = output.replace("VoyageNumber","Voyage Number");
 
@@ -119,9 +123,11 @@ public class EstimateActivity extends AppCompatActivity {
 
                 output = output.replace("SailingDate: \n\n","");
 
+                output = output.replace("ContainerLoad: Load\n\n","");
+
                 output = output.replace("ContainerNumber: \n\n","");
 
-                output = output.replace("ContainerType:40 Dry\n\n","");
+                output = output.replace("ContainerType: Type\n\n","");
 
                 //Fields that will show when Road is selected
                 output = output.replace("Truck: \n\n", "");
@@ -162,9 +168,13 @@ public class EstimateActivity extends AppCompatActivity {
 
                 output = output.replace("SailingDate: \n\n","");
 
+                output = output.replace("ContainerLoad", "Container Load");
+                output = output.replace(": Load", ":");
+
                 output = output.replace("ContainerNumber","Container Number");
 
                 output = output.replace("ContainerType","Container Type");
+                output = output.replace(": Type", ":");
 
                 //Fields that will show when Road is selected
                 output = output.replace("Truck","Truck ID");

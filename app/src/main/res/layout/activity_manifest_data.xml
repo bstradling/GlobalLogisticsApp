@@ -41,19 +41,6 @@
                 app:layout_constraintEnd_toEndOf="parent" />
 
             <TextView
-                android:id="@+id/tvVolume"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="28dp"
-                android:layout_marginEnd="96dp"
-                android:text="@string/volume"
-                app:layout_constraintEnd_toStartOf="@+id/etVolume"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvUnits" />
-
-            <TextView
                 android:id="@+id/tvVoyageNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -113,16 +100,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvBillNumber" />
 
-            <EditText
-                android:id="@+id/etVolume"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/volume"
-                android:inputType="textPersonName"
-                app:layout_constraintBaseline_toBaselineOf="@+id/tvVolume"
-                app:layout_constraintEnd_toEndOf="parent" />
-
             <TextView
                 android:id="@+id/tvPackaging"
                 android:layout_width="wrap_content"
@@ -134,7 +111,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/etPackaging"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvPieces" />
+                app:layout_constraintTop_toBottomOf="@+id/tvContainerType" />
 
             <EditText
                 android:id="@+id/etDelivery"
@@ -218,7 +195,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/svDescription"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvAccountNumber" />
+                app:layout_constraintTop_toBottomOf="@+id/tvContainerNumber" />
 
             <TextView
                 android:id="@+id/tvWeight"
@@ -356,12 +333,12 @@
                 android:id="@+id/svDescription"
                 android:layout_width="210dp"
                 android:layout_height="90dp"
+                android:layout_marginTop="28dp"
                 android:layout_marginBottom="28dp"
                 android:ems="10"
                 app:layout_constraintBottom_toTopOf="@id/etQuality"
                 app:layout_constraintEnd_toEndOf="@+id/etContainerNumber"
-                app:layout_constraintTop_toBottomOf="@+id/etAccountNumber"
-                app:layout_constraintVertical_bias="0.0">
+                app:layout_constraintTop_toBottomOf="@id/etContainerNumber">
 
                 <EditText
                     android:id="@+id/etDescription"
@@ -638,29 +615,6 @@
                 app:layout_constraintEnd_toEndOf="parent" />
 
             <TextView
-                android:id="@+id/tvAccountNumber"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="28dp"
-                android:layout_marginEnd="96dp"
-                android:text="@string/account_number"
-                app:layout_constraintEnd_toStartOf="@+id/etAccountNumber"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvContainerNumber" />
-
-            <EditText
-                android:id="@+id/etAccountNumber"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/account_number"
-                android:inputType="textPersonName"
-                app:layout_constraintBaseline_toBaselineOf="@+id/tvAccountNumber"
-                app:layout_constraintEnd_toEndOf="parent" />
-
-            <TextView
                 android:id="@+id/tvQuality"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -715,20 +669,21 @@
                 android:layout_marginTop="28dp"
                 android:layout_marginEnd="96dp"
                 android:text="@string/dimensions"
-                app:layout_constraintEnd_toStartOf="@+id/etDimensions"
+                app:layout_constraintEnd_toStartOf="@+id/etDimensions1"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvContainerType" />
+                app:layout_constraintTop_toBottomOf="@+id/tvPackaging" />
 
             <EditText
-                android:id="@+id/etDimensions"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/etDimensions1"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:layout_marginEnd="36dp"
                 android:ems="10"
                 android:hint="@string/dimensions_hint"
-                android:inputType="textPersonName"
+                android:inputType="numberDecimal"
                 app:layout_constraintBaseline_toBaselineOf="@+id/tvDimensions"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toStartOf="@+id/etDimensions2" />
 
             <TextView
                 android:id="@+id/tvUnits"
@@ -764,7 +719,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/etAccountingInfo"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvVolume" />
+                app:layout_constraintTop_toBottomOf="@+id/tvUnits" />
 
             <EditText
                 android:id="@+id/etAccountingInfo"
@@ -810,17 +765,16 @@
                 app:layout_constraintEnd_toStartOf="@+id/spContainerType"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvPackaging" />
+                app:layout_constraintTop_toBottomOf="@+id/tvContainerLoad" />
 
             <Spinner
                 android:id="@+id/spContainerType"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="96dp"
+                android:layout_marginEnd="50dp"
                 android:spinnerMode="dropdown"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etPackaging" />
+                app:layout_constraintTop_toBottomOf="@+id/spContainerLoad" />
 
             <TextView
                 android:id="@+id/tvDepartureDate"
@@ -941,6 +895,50 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/etDimensions2"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:layout_marginEnd="36dp"
+                android:ems="10"
+                android:hint="@string/dimensions_hint"
+                android:inputType="numberDecimal"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tvDimensions"
+                app:layout_constraintEnd_toStartOf="@+id/etDimensions3" />
+
+            <EditText
+                android:id="@+id/etDimensions3"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:ems="10"
+                android:hint="@string/dimensions_hint"
+                android:inputType="numberDecimal"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tvDimensions"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/tvContainerLoad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="96dp"
+                android:spinnerMode="dropdown"
+                android:text="@string/container_load"
+                app:layout_constraintEnd_toStartOf="@+id/spContainerLoad"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvPieces" />
+
+            <Spinner
+                android:id="@+id/spContainerLoad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="50dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etPieces" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

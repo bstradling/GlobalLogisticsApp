@@ -59,10 +59,10 @@
     <string name="text_view_quality">Nature or Quality\nof goods</string>
     <string name="edit_text_quality">Nature/ Quality</string>
     <string name="number_of_pieces">Number of pieces</string>
-    <string name="dimensions">Dimensions</string>
-    <string name="dimensions_hint">3m, 3m, 3m</string>
+    <string name="dimensions">Dimensions (m)</string>
+    <string name="dimensions_hint">0</string>
     <string name="units">Units</string>
-    <string name="units_hint">kg, lbs</string>
+    <string name="units_hint">CBM, kg</string>
     <string name="accounting_information">Accounting\nInformation</string>
     <string name="optional_field">(optional)</string>
     <string name="text_view_reference">Reference\nNumber</string>
@@ -79,4 +79,5 @@
     <string name="maritime">Maritime</string>
     <string name="air">Air</string>
     <string name="road">Road</string>
+    <string name="container_load">Container Load</string>
 </resources>

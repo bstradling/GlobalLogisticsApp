@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -14,7 +15,10 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.gson.Gson;
+
+import org.w3c.dom.Text;
 
 public class ManifestDataActivity extends AppCompatActivity {
     ShippingManifest data = new ShippingManifest();
@@ -39,13 +43,13 @@ public class ManifestDataActivity extends AppCompatActivity {
     EditText etContainerNumber;
 
     //ContainerType
-    Spinner dropdown;
+    Spinner containerType;
+    Spinner containerLoad;
 
     EditText etTruckID;
     EditText etGrossWeight;
     EditText etLicence;
 
-    EditText etAccountNumber;
     EditText etAccountInfo;
     EditText etArrivalDate;
     EditText etConsigneeName;
@@ -54,7 +58,9 @@ public class ManifestDataActivity extends AppCompatActivity {
     EditText etDelivery;
     EditText etDepartureDate;
     EditText etDescription;
-    EditText etDimensions;
+    EditText etDimensions1;
+    EditText etDimensions2;
+    EditText etDimensions3;
     EditText etParty;
     EditText etNumberofPieces;
     EditText etPackaging;
@@ -125,7 +131,10 @@ public class ManifestDataActivity extends AppCompatActivity {
         etContainerNumber = findViewById(R.id.etContainerNumber);
 
         TextView tvContainerType = findViewById(R.id.tvContainerType);
-        dropdown = findViewById(R.id.spContainerType);
+        containerType = findViewById(R.id.spContainerType);
+
+        TextView tvContainerLoad = findViewById(R.id.tvContainerLoad);
+        containerLoad = findViewById(R.id.spContainerLoad);
 
         //Fields that will show when Road is selected
         etTruckID = findViewById(R.id.etTruckID);
@@ -136,6 +145,27 @@ public class ManifestDataActivity extends AppCompatActivity {
 
         etLicence = findViewById(R.id.etLicenseID);
         TextView tvLicence = findViewById(R.id.tvLicenseID);
+
+        etPackaging = findViewById(R.id.etPackaging);
+        TextView tvPackaging = findViewById(R.id.tvPackaging);
+
+        etDimensions1 = findViewById(R.id.etDimensions1);
+        etDimensions2 = findViewById(R.id.etDimensions2);
+        etDimensions3 = findViewById(R.id.etDimensions3);
+        TextView tvDimensions = findViewById(R.id.tvDimensions);
+
+
+        //get the spinner from the xml.
+        //Spinner containerLoad = findViewById(R.id.spContainerLoad);
+        //create a list of items for the spinner.
+        String[] loadtypes = new String[]{"Load","Full (FCL)", "Less (LCL)"};
+        //create an adapter to describe how the items are displayed, adapters are used in several places in android.
+        //There are multiple variations of this, but this is the basic variant.
+        ArrayAdapter<String> loadAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, loadtypes);
+        loadAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //set the spinners adapter to the previously created one.
+        containerLoad.setAdapter(loadAdapter);
+
 
         //shippingType = "Maritime"
         switch (shippingType) {
@@ -168,8 +198,67 @@ public class ManifestDataActivity extends AppCompatActivity {
                 tvContainerNumber.setVisibility(View.VISIBLE);
                 etContainerNumber.setVisibility(View.VISIBLE);
 
-                tvContainerType.setVisibility(View.VISIBLE);
-                dropdown.setVisibility(View.VISIBLE);
+                tvContainerLoad.setVisibility(View.VISIBLE);
+                containerLoad.setVisibility(View.VISIBLE);
+
+                containerLoad.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                        if (containerLoad.getSelectedItem().toString().equals("Full (FCL)")) {
+
+                            tvContainerType.setVisibility(View.VISIBLE);
+                            containerType.setVisibility(View.VISIBLE);
+
+                            tvPackaging.setVisibility(View.GONE);
+                            etPackaging.setVisibility(View.GONE);
+
+                            tvDimensions.setVisibility(View.GONE);
+                            etDimensions1.setVisibility(View.GONE);
+                            etDimensions2.setVisibility(View.GONE);
+                            etDimensions3.setVisibility(View.GONE);
+                        }
+                        else if (containerLoad.getSelectedItem().toString().equals("Less (LCL)")) {
+
+                            tvContainerType.setVisibility(View.GONE);
+                            containerType.setVisibility(View.GONE);
+
+                            tvPackaging.setVisibility(View.VISIBLE);
+                            etPackaging.setVisibility(View.VISIBLE);
+
+                            tvDimensions.setVisibility(View.VISIBLE);
+                            etDimensions1.setVisibility(View.VISIBLE);
+                            etDimensions2.setVisibility(View.VISIBLE);
+                            etDimensions3.setVisibility(View.VISIBLE);
+                        }
+                        else {
+                            tvContainerType.setVisibility(View.GONE);
+                            containerType.setVisibility(View.GONE);
+
+                            tvPackaging.setVisibility(View.GONE);
+                            etPackaging.setVisibility(View.GONE);
+
+                            tvDimensions.setVisibility(View.GONE);
+                            etDimensions1.setVisibility(View.GONE);
+                            etDimensions2.setVisibility(View.GONE);
+                            etDimensions3.setVisibility(View.GONE);
+                        }
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) {
+                        tvContainerType.setVisibility(View.GONE);
+                        containerType.setVisibility(View.GONE);
+
+                        tvPackaging.setVisibility(View.GONE);
+                        etPackaging.setVisibility(View.GONE);
+
+                        tvDimensions.setVisibility(View.GONE);
+                        etDimensions1.setVisibility(View.GONE);
+                        etDimensions2.setVisibility(View.GONE);
+                        etDimensions3.setVisibility(View.GONE);
+                    }
+                });
+
 
                 //Fields that will show when Road is selected
                 etTruckID.setVisibility(View.GONE);
@@ -213,7 +302,10 @@ public class ManifestDataActivity extends AppCompatActivity {
                 etContainerNumber.setVisibility(View.GONE);
 
                 tvContainerType.setVisibility(View.GONE);
-                dropdown.setVisibility(View.GONE);
+                containerType.setVisibility(View.GONE);
+
+                tvContainerLoad.setVisibility(View.GONE);
+                containerLoad.setVisibility(View.GONE);
 
                 //Fields that will show when Road is selected
                 etTruckID.setVisibility(View.GONE);
@@ -273,8 +365,66 @@ public class ManifestDataActivity extends AppCompatActivity {
                 tvContainerNumber.setVisibility(View.VISIBLE);
                 etContainerNumber.setVisibility(View.VISIBLE);
 
-                tvContainerType.setVisibility(View.VISIBLE);
-                dropdown.setVisibility(View.VISIBLE);
+                tvContainerLoad.setVisibility(View.VISIBLE);
+                containerLoad.setVisibility(View.VISIBLE);
+
+                containerLoad.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                        if (containerLoad.getSelectedItem().toString().equals("Full (FCL)")) {
+
+                            tvContainerType.setVisibility(View.VISIBLE);
+                            containerType.setVisibility(View.VISIBLE);
+
+                            tvPackaging.setVisibility(View.GONE);
+                            etPackaging.setVisibility(View.GONE);
+
+                            tvDimensions.setVisibility(View.GONE);
+                            etDimensions1.setVisibility(View.GONE);
+                            etDimensions2.setVisibility(View.GONE);
+                            etDimensions3.setVisibility(View.GONE);
+                        }
+                        else if (containerLoad.getSelectedItem().toString().equals("Less (LCL)")) {
+
+                            tvContainerType.setVisibility(View.GONE);
+                            containerType.setVisibility(View.GONE);
+
+                            tvPackaging.setVisibility(View.VISIBLE);
+                            etPackaging.setVisibility(View.VISIBLE);
+
+                            tvDimensions.setVisibility(View.VISIBLE);
+                            etDimensions1.setVisibility(View.VISIBLE);
+                            etDimensions2.setVisibility(View.VISIBLE);
+                            etDimensions3.setVisibility(View.VISIBLE);
+                        }
+                        else {
+                            tvContainerType.setVisibility(View.GONE);
+                            containerType.setVisibility(View.GONE);
+
+                            tvPackaging.setVisibility(View.GONE);
+                            etPackaging.setVisibility(View.GONE);
+
+                            tvDimensions.setVisibility(View.GONE);
+                            etDimensions1.setVisibility(View.GONE);
+                            etDimensions2.setVisibility(View.GONE);
+                            etDimensions3.setVisibility(View.GONE);
+                        }
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) {
+                        tvContainerType.setVisibility(View.GONE);
+                        containerType.setVisibility(View.GONE);
+
+                        tvPackaging.setVisibility(View.GONE);
+                        etPackaging.setVisibility(View.GONE);
+
+                        tvDimensions.setVisibility(View.GONE);
+                        etDimensions1.setVisibility(View.GONE);
+                        etDimensions2.setVisibility(View.GONE);
+                        etDimensions3.setVisibility(View.GONE);
+                    }
+                });
 
                 //Fields that will show when Road is selected
                 etTruckID.setVisibility(View.VISIBLE);
@@ -315,17 +465,16 @@ public class ManifestDataActivity extends AppCompatActivity {
         });
 
         //get the spinner from the xml.
-        //Spinner dropdown = findViewById(R.id.spContainerType);
+        //Spinner containerType = findViewById(R.id.spContainerType);
         //create a list of items for the spinner.
-        String[] items = new String[]{"40 Dry", "20 Dry", "40 RF", "20 RF", "40 OT", "20 OT", "40 Flat", "20 Flat"};
+        String[] items = new String[]{"Type","40 Dry", "20 Dry", "40 RF", "20 RF", "40 OT", "20 OT", "40 Flat", "20 Flat"};
         //create an adapter to describe how the items are displayed, adapters are used in several places in android.
         //There are multiple variations of this, but this is the basic variant.
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         //set the spinners adapter to the previously created one.
-        dropdown.setAdapter(adapter);
+        containerType.setAdapter(adapter);
 
-        etAccountNumber = findViewById(R.id.etAccountNumber);
         etAccountInfo = findViewById(R.id.etAccountingInfo);
         etArrivalDate = findViewById(R.id.etArrivalDate);
         etConsigneeName = findViewById(R.id.etConsigneeName);
@@ -334,14 +483,11 @@ public class ManifestDataActivity extends AppCompatActivity {
         etDelivery = findViewById(R.id.etDelivery);
         etDepartureDate = findViewById(R.id.etDepartureDate);
         etDescription = findViewById(R.id.etDescription);
-        etDimensions = findViewById(R.id.etDimensions);
         etNumberofPieces = findViewById(R.id.etPieces);
-        etPackaging = findViewById(R.id.etPackaging);
         etQuality = findViewById(R.id.etQuality);
         etReception = findViewById(R.id.etReception);
         etReference = findViewById(R.id.etReference);
         etUnits = findViewById(R.id.etUnits);
-        etVolume = findViewById(R.id.etVolume);
         etWeight = findViewById(R.id.etWeight);
 
 
@@ -356,8 +502,9 @@ public class ManifestDataActivity extends AppCompatActivity {
     }
 
     public void saveManifest() {
+        ContainerVolumeHandler handler = new ContainerVolumeHandler();
+
         data.setAccountInfo(etAccountInfo.getText().toString());
-        data.setAccountNumber(etAccountNumber.getText().toString());
         data.setArrival(etArrival.getText().toString());
         data.setArrivalDate(etArrivalDate.getText().toString());
         data.setCarrier(etCarrier.getText().toString());
@@ -367,13 +514,36 @@ public class ManifestDataActivity extends AppCompatActivity {
         data.setConsigneeAccount(etConsigneeAccount.getText().toString());
         data.setConsigneeAddress(etConsigneeAddress.getText().toString());
         data.setConsigneeName(etConsigneeName.getText().toString());
+        data.setContainerLoad(containerLoad.getSelectedItem().toString());
         data.setContainerNumber(etContainerNumber.getText().toString());
-        data.setContainerType(dropdown.getSelectedItem().toString());
+        data.setContainerType(containerType.getSelectedItem().toString());
         data.setDelivery(etDelivery.getText().toString());
         data.setDeparture(etDeparture.getText().toString());
         data.setDepartureDate(etDepartureDate.getText().toString());
         data.setDescription(etDescription.getText().toString());
-        data.setDimensions(etDimensions.getText().toString());
+
+        if ((containerLoad).getSelectedItem().toString().equals("Full (FCL)")) {
+            handler.setVolume(containerType.getSelectedItem().toString());
+            data.setDimensions(handler.getDimensions());
+        }
+        else if ((containerLoad).getSelectedItem().toString().equals("Less (LCL)")){
+            data.setDimensions(
+                    etDimensions1.getText().toString(),
+                    etDimensions2.getText().toString(),
+                    etDimensions3.getText().toString()
+            );
+        }
+        else if (etDimensions1.getText().toString().equals("") ||
+                etDimensions2.getText().toString().equals("") ||
+                etDimensions3.getText().toString().equals("")){
+            data.setDimensions("0m, 0m, 0m");
+        }
+        else {
+            data.setDimensions(
+                    etDimensions1.getText().toString(),
+                    etDimensions2.getText().toString(),
+                    etDimensions3.getText().toString());
+        }
         data.setGrossWeight(etGrossWeight.getText().toString());
         data.setIataCode(etIataCode.getText().toString());
         data.setLicenceID(etLicence.getText().toString());
@@ -391,7 +561,30 @@ public class ManifestDataActivity extends AppCompatActivity {
         data.setTruck(etTruckID.getText().toString());
         data.setUnits(etUnits.getText().toString());
         data.setVessel(etVessel.getText().toString());
-        data.setVolume(etVolume.getText().toString());
+
+        if ((containerLoad).getSelectedItem().toString().equals("Full (FCL)")) {
+            handler.setVolume(containerType.getSelectedItem().toString());
+            data.setVolume(handler.getVolume());
+        }
+        else if ((containerLoad).getSelectedItem().toString().equals("Less (LCL)")){
+            data.setVolume(
+                    Float.parseFloat((etDimensions1).getText().toString()),
+                    Float.parseFloat((etDimensions2).getText().toString()),
+                    Float.parseFloat((etDimensions3).getText().toString())
+            );
+        }
+        else if (etDimensions1.getText().toString().equals("") ||
+                etDimensions2.getText().toString().equals("") ||
+                etDimensions3.getText().toString().equals("")){
+            data.setVolume(0);
+        }
+        else {
+            data.setVolume(
+                    Float.parseFloat((etDimensions1).getText().toString()),
+                    Float.parseFloat((etDimensions2).getText().toString()),
+                    Float.parseFloat((etDimensions3).getText().toString())
+            );
+        }
         data.setVoyageNumber(etVoyage.getText().toString());
         data.setWeight(etWeight.getText().toString());
 
