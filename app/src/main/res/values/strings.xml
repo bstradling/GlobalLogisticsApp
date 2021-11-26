@@ -80,4 +80,5 @@
     <string name="air">Air</string>
     <string name="road">Road</string>
     <string name="container_load">Container Load</string>
+    <string name="shipping_manifest">Shipping Manifest</string>
 </resources>
