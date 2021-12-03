@@ -81,4 +81,10 @@
     <string name="road">Road</string>
     <string name="container_load">Container Load</string>
     <string name="shipping_manifest">Shipping Manifest</string>
+    <string name="services_demurage">Demurrage</string>
+    <string name="services_detention">Detention</string>
+    <string name="fee_tariffs">Additional Tariffs</string>
+    <string name="input_demurrage">Demurrage Amount</string>
+    <string name="input_detention">Detention Amount</string>
+    <string name="input_tariffs">Tariff Amount</string>
 </resources>

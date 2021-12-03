@@ -49,12 +49,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="16dp"
         android:buttonTint="#8BC34A"
         android:clickable="true"
         android:text="@string/services_transport"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.000"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cbCustoms"
         tools:visibility="visible" />
@@ -64,7 +64,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="16dp"
         android:buttonTint="#8BC34A"
         android:clickable="true"
         android:text="@string/services_discharge"
@@ -78,7 +78,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="16dp"
         android:buttonTint="#8BC34A"
         android:text="@string/services_loading"
         app:layout_constraintEnd_toEndOf="parent"
@@ -91,14 +91,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="20dp"
         android:buttonTint="#8BC34A"
         android:clickable="true"
         android:text="@string/services_warehousing"
+        app:layout_constraintBottom_toTopOf="@+id/cbDemurrage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cbLoading" />
+        app:layout_constraintTop_toBottomOf="@+id/cbLoading"
+        app:layout_constraintVertical_bias="0.0" />
 
     <CheckBox
         android:id="@+id/cbWarehousingManpower"
@@ -162,4 +164,37 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976" />
+
+    <CheckBox
+        android:id="@+id/cbDemurrage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="12dp"
+        android:buttonTint="#8BC34A"
+        android:text="@string/services_demurage"
+        app:layout_constraintBottom_toTopOf="@+id/cbDetention"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <CheckBox
+        android:id="@+id/cbDetention"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="16dp"
+        android:buttonTint="#8BC34A"
+        android:text="@string/services_detention"
+        app:layout_constraintBottom_toTopOf="@+id/cbTariffs"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <CheckBox
+        android:id="@+id/cbTariffs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:backgroundTint="#8BC34A"
+        android:buttonTint="#8BC34A"
+        android:text="@string/fee_tariffs"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="550dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
