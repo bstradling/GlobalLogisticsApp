@@ -12,7 +12,7 @@ import android.widget.CompoundButton;
 
 import com.google.gson.Gson;
 
-public class ServicesActivity extends AppCompatActivity {
+public class ServicesActivity<Checkbox> extends AppCompatActivity {
     Gson gson = new Gson();
 
     String json;
@@ -28,6 +28,9 @@ public class ServicesActivity extends AppCompatActivity {
     CheckBox loadingManpower;
     CheckBox warehousing;
     CheckBox warehousingManpower;
+    Checkbox demurrage;
+    Checkbox detention;
+    Checkbox tariff;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -111,6 +114,61 @@ public class ServicesActivity extends AppCompatActivity {
                 {
                     warehousingManpower.setVisibility(View.GONE);
                     warehousingManpower.setChecked(false);
+
+                }
+            }
+        });
+        loadingManpower = findViewById(R.id.cbLoadingManpower);
+        demurrage = findViewById(R.id.cbDemurrage);
+        demurrage.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked)
+                {
+                    loadingManpower.setVisibility(View.VISIBLE);
+
+                }
+                else
+                {
+                    loadingManpower.setVisibility(View.GONE);
+                    loadingManpower.setChecked(false);
+
+                }
+            }
+        });
+        loadingManpower = findViewById(R.id.cbLoadingManpower);
+        detention = findViewById(R.id.cbDetention);
+        detention.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked)
+                {
+                    loadingManpower.setVisibility(View.VISIBLE);
+
+                }
+                else
+                {
+                    loadingManpower.setVisibility(View.GONE);
+                    loadingManpower.setChecked(false);
+
+                }
+            }
+        });
+
+        loadingManpower = findViewById(R.id.cbLoadingManpower);
+        tariff = findViewById(R.id.cbTariffs);
+        tariff.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked)
+                {
+                    loadingManpower.setVisibility(View.VISIBLE);
+
+                }
+                else
+                {
+                    loadingManpower.setVisibility(View.GONE);
+                    loadingManpower.setChecked(false);
 
                 }
             }
