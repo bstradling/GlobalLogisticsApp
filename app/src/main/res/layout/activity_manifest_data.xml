@@ -207,7 +207,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/etWeight"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvDimensions" />
+                app:layout_constraintTop_toBottomOf="@+id/tvVolume" />
 
             <TextView
                 android:id="@+id/tvVesselName"
@@ -252,7 +252,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="@string/weight"
-                android:inputType="textPersonName"
+                android:inputType="numberDecimal"
                 app:layout_constraintBaseline_toBaselineOf="@+id/tvWeight"
                 app:layout_constraintEnd_toEndOf="parent" />
 
@@ -861,6 +861,7 @@
                 android:ems="10"
                 android:hint="@string/truck_id"
                 android:inputType="textPersonName"
+                android:minHeight="48dp"
                 app:layout_constraintBaseline_toBaselineOf="@+id/tvTruckID"
                 app:layout_constraintEnd_toEndOf="parent" />
 
@@ -871,6 +872,7 @@
                 android:ems="10"
                 android:hint="@string/gross_weight_hint"
                 android:inputType="textPersonName"
+                android:minHeight="48dp"
                 app:layout_constraintBaseline_toBaselineOf="@+id/tvGrossWeight"
                 app:layout_constraintEnd_toEndOf="parent" />
 
@@ -881,6 +883,7 @@
                 android:ems="10"
                 android:hint="@string/drivers_license_hint"
                 android:inputType="textPersonName"
+                android:minHeight="48dp"
                 app:layout_constraintBaseline_toBaselineOf="@+id/tvLicenseID"
                 app:layout_constraintEnd_toEndOf="parent" />
 
@@ -939,6 +942,29 @@
                 android:layout_marginEnd="50dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/etPieces" />
+
+            <TextView
+                android:id="@+id/tvVolume"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="96dp"
+                android:text="@string/volume"
+                app:layout_constraintEnd_toStartOf="@+id/etVolume"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDimensions" />
+
+            <EditText
+                android:id="@+id/etVolume"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/volume"
+                android:inputType="numberDecimal"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tvVolume"
+                app:layout_constraintEnd_toEndOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

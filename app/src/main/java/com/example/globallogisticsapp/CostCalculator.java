@@ -13,6 +13,10 @@ public class CostCalculator {
         rebate = (15 * wm) + 25;
     }
 
+    public void setRebate() {
+        rebate = (15 * wm) + 25;
+    }
+
     public float getRebate() {
         return rebate;
     }

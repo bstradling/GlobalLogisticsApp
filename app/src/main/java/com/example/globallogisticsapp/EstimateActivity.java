@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.google.gson.Gson;
 
@@ -24,6 +25,7 @@ public class EstimateActivity extends AppCompatActivity {
     private String output;
     private String shippingType;
     private ShippingManifest data;
+    private CostCalculator costs;
 
 
     @Override
@@ -36,12 +38,16 @@ public class EstimateActivity extends AppCompatActivity {
         data = (ShippingManifest) intent.getSerializableExtra("JSON_DATA");
         shippingType = intent.getStringExtra("SHIPPING_TYPE");
 
-        output = json;
-        output = output.replace("{","");
-        output = output.replace("}","");
-        output = output.replace("\",\"","\"\n\n\"");
-        output = output.replace("\"","");
-        output = output.replace(":",": ");
+        costs = new CostCalculator();
+        String volumeString = data.getVolume();
+        String[] seperated = volumeString.split(" ");
+
+        costs.setWm(Float.parseFloat(seperated[0]),Float.parseFloat(data.getWeight()));
+        costs.setRebate();
+
+        TextView rebate = findViewById(R.id.tvRebate);
+        String rebateText = "Rebate: $" + costs.getRebate();
+        rebate.setText(rebateText);
 
         /******************************************************************
          * The editing of the json output in the switch statement should
@@ -49,6 +55,16 @@ public class EstimateActivity extends AppCompatActivity {
          * estimate and invoice activities.
          ******************************************************************/
 
+        //Basic formatting
+        output = json;
+        output = output.replace("{","");
+        output = output.replace("}","");
+        output = output.replace("\",\"","\"\n\n\"");
+        output = output.replace("\"","");
+        output = output.replace(":",": ");
+        //output = output.replace("volumeValue: ", "");
+
+        //Full formatting
         output = output.replace("AccountInfo:","Account Info:");
         output = output.replace("AccountNumber:","Account Number:");
         output = output.replace("ArrivalDate:","Arrival Date:");
@@ -68,7 +84,7 @@ public class EstimateActivity extends AppCompatActivity {
         output = output.replace("TransportAdditionalManpower:","(Transport)\nAdditional Manpower:");
         output = output.replace("WarehousingAdditionalManpower:","(Warehousing)\nAdditional Manpower:");
 
-        //shippingType = "Maritime"
+        //Maritime formatting
         switch (shippingType) {
             case "Maritime":
 
@@ -103,7 +119,7 @@ public class EstimateActivity extends AppCompatActivity {
                 output = output.replace("LicenceID: \n\n", "");
                 break;
 
-            //shippingType = "Air"
+            //Air formatting
             case "Air":
 
                 //Fields that will change depending on the shipping type
@@ -136,7 +152,8 @@ public class EstimateActivity extends AppCompatActivity {
 
                 output = output.replace("LicenceID: \n\n", "");
                 break;
-            //shippingType = "Road"
+
+            //Road Formatting
             case "Road":
 
                 //Fields that will change depending on the shipping type

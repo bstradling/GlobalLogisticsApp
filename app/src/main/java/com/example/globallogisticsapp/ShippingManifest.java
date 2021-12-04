@@ -72,7 +72,7 @@ public class ShippingManifest implements Serializable {
         LoadingAdditionalManpower= "No";
         Warehousing = "No";
         WarehousingAdditionalManpower = "No";
-        Volume = "0 cubic meters\n\n";
+        Volume = "0 CBM\n\n";
     }
 
     //Setter functions
@@ -249,6 +249,9 @@ public class ShippingManifest implements Serializable {
     public void setVolume(float v) {
         Volume = df.format(v) + " CBM";
     }
+    public void setVolume(String volume) {
+        Volume = volume + " CBM";
+    }
 
     public void setVoyageNumber(String voyageNumber) {
         VoyageNumber = voyageNumber;
@@ -264,6 +267,14 @@ public class ShippingManifest implements Serializable {
 
     public void setWeight(String weight) {
         Weight = weight;
+    }
+
+    public String getVolume() {
+        return Volume;
+    }
+
+    public String getWeight() {
+        return Weight;
     }
 
     //Create a new Shipping manifest object in the Activity and set the values from the activity

@@ -154,6 +154,9 @@ public class ManifestDataActivity extends AppCompatActivity {
         etDimensions3 = findViewById(R.id.etDimensions3);
         TextView tvDimensions = findViewById(R.id.tvDimensions);
 
+        etVolume = findViewById(R.id.etVolume);
+        TextView tvVolume = findViewById(R.id.tvVolume);
+
 
         //get the spinner from the xml.
         //Spinner containerLoad = findViewById(R.id.spContainerLoad);
@@ -216,6 +219,9 @@ public class ManifestDataActivity extends AppCompatActivity {
                             etDimensions1.setVisibility(View.GONE);
                             etDimensions2.setVisibility(View.GONE);
                             etDimensions3.setVisibility(View.GONE);
+
+                            tvVolume.setVisibility(View.GONE);
+                            etVolume.setVisibility(View.GONE);
                         }
                         else if (containerLoad.getSelectedItem().toString().equals("Less (LCL)")) {
 
@@ -229,6 +235,9 @@ public class ManifestDataActivity extends AppCompatActivity {
                             etDimensions1.setVisibility(View.VISIBLE);
                             etDimensions2.setVisibility(View.VISIBLE);
                             etDimensions3.setVisibility(View.VISIBLE);
+
+                            tvVolume.setVisibility(View.VISIBLE);
+                            etVolume.setVisibility(View.VISIBLE);
                         }
                         else {
                             tvContainerType.setVisibility(View.GONE);
@@ -241,6 +250,9 @@ public class ManifestDataActivity extends AppCompatActivity {
                             etDimensions1.setVisibility(View.GONE);
                             etDimensions2.setVisibility(View.GONE);
                             etDimensions3.setVisibility(View.GONE);
+
+                            tvVolume.setVisibility(View.GONE);
+                            etVolume.setVisibility(View.GONE);
                         }
                     }
 
@@ -256,6 +268,9 @@ public class ManifestDataActivity extends AppCompatActivity {
                         etDimensions1.setVisibility(View.GONE);
                         etDimensions2.setVisibility(View.GONE);
                         etDimensions3.setVisibility(View.GONE);
+
+                        tvVolume.setVisibility(View.GONE);
+                        etVolume.setVisibility(View.GONE);
                     }
                 });
 
@@ -383,6 +398,9 @@ public class ManifestDataActivity extends AppCompatActivity {
                             etDimensions1.setVisibility(View.GONE);
                             etDimensions2.setVisibility(View.GONE);
                             etDimensions3.setVisibility(View.GONE);
+
+                            tvVolume.setVisibility(View.GONE);
+                            etVolume.setVisibility(View.GONE);
                         }
                         else if (containerLoad.getSelectedItem().toString().equals("Less (LCL)")) {
 
@@ -396,6 +414,9 @@ public class ManifestDataActivity extends AppCompatActivity {
                             etDimensions1.setVisibility(View.VISIBLE);
                             etDimensions2.setVisibility(View.VISIBLE);
                             etDimensions3.setVisibility(View.VISIBLE);
+
+                            tvVolume.setVisibility(View.VISIBLE);
+                            etVolume.setVisibility(View.VISIBLE);
                         }
                         else {
                             tvContainerType.setVisibility(View.GONE);
@@ -408,6 +429,9 @@ public class ManifestDataActivity extends AppCompatActivity {
                             etDimensions1.setVisibility(View.GONE);
                             etDimensions2.setVisibility(View.GONE);
                             etDimensions3.setVisibility(View.GONE);
+
+                            tvVolume.setVisibility(View.GONE);
+                            etVolume.setVisibility(View.GONE);
                         }
                     }
 
@@ -423,6 +447,9 @@ public class ManifestDataActivity extends AppCompatActivity {
                         etDimensions1.setVisibility(View.GONE);
                         etDimensions2.setVisibility(View.GONE);
                         etDimensions3.setVisibility(View.GONE);
+
+                        tvVolume.setVisibility(View.GONE);
+                        etVolume.setVisibility(View.GONE);
                     }
                 });
 
@@ -526,23 +553,22 @@ public class ManifestDataActivity extends AppCompatActivity {
             handler.setVolume(containerType.getSelectedItem().toString());
             data.setDimensions(handler.getDimensions());
         }
-        else if ((containerLoad).getSelectedItem().toString().equals("Less (LCL)")){
-            data.setDimensions(
-                    etDimensions1.getText().toString(),
-                    etDimensions2.getText().toString(),
-                    etDimensions3.getText().toString()
-            );
-        }
-        else if (etDimensions1.getText().toString().equals("") ||
-                etDimensions2.getText().toString().equals("") ||
-                etDimensions3.getText().toString().equals("")){
-            data.setDimensions("0m, 0m, 0m");
-        }
         else {
-            data.setDimensions(
-                    etDimensions1.getText().toString(),
-                    etDimensions2.getText().toString(),
-                    etDimensions3.getText().toString());
+            if ((etDimensions1.getText().toString().equals("") ||
+                    etDimensions2.getText().toString().equals("") ||
+                    etDimensions3.getText().toString().equals(""))
+                    && etVolume.getText().toString().equals("")) {
+                data.setDimensions("0m, 0m, 0m");
+
+            } else if (!etVolume.getText().toString().equals("")) {
+                data.setDimensions("N/A");
+            } else {
+                data.setDimensions(
+                        etDimensions1.getText().toString(),
+                        etDimensions2.getText().toString(),
+                        etDimensions3.getText().toString()
+                );
+            }
         }
         data.setGrossWeight(etGrossWeight.getText().toString());
         data.setIataCode(etIataCode.getText().toString());
@@ -566,24 +592,21 @@ public class ManifestDataActivity extends AppCompatActivity {
             handler.setVolume(containerType.getSelectedItem().toString());
             data.setVolume(handler.getVolume());
         }
-        else if ((containerLoad).getSelectedItem().toString().equals("Less (LCL)")){
-            data.setVolume(
-                    Float.parseFloat((etDimensions1).getText().toString()),
-                    Float.parseFloat((etDimensions2).getText().toString()),
-                    Float.parseFloat((etDimensions3).getText().toString())
-            );
-        }
-        else if (etDimensions1.getText().toString().equals("") ||
-                etDimensions2.getText().toString().equals("") ||
-                etDimensions3.getText().toString().equals("")){
-            data.setVolume(0);
-        }
         else {
-            data.setVolume(
-                    Float.parseFloat((etDimensions1).getText().toString()),
-                    Float.parseFloat((etDimensions2).getText().toString()),
-                    Float.parseFloat((etDimensions3).getText().toString())
-            );
+            if ((etDimensions1.getText().toString().equals("") ||
+                    etDimensions2.getText().toString().equals("") ||
+                    etDimensions3.getText().toString().equals("")) &&
+                    etVolume.getText().toString().equals("")) {
+                data.setVolume(0);
+            } else if (!etVolume.getText().toString().equals("")) {
+                data.setVolume(etVolume.getText().toString());
+            } else {
+                data.setVolume(
+                        Float.parseFloat((etDimensions1).getText().toString()),
+                        Float.parseFloat((etDimensions2).getText().toString()),
+                        Float.parseFloat((etDimensions3).getText().toString())
+                );
+            }
         }
         data.setVoyageNumber(etVoyage.getText().toString());
         data.setWeight(etWeight.getText().toString());

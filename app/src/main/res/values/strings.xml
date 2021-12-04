@@ -59,7 +59,7 @@
     <string name="text_view_quality">Nature or Quality\nof goods</string>
     <string name="edit_text_quality">Nature/ Quality</string>
     <string name="number_of_pieces">Number of pieces</string>
-    <string name="dimensions">Dimensions (m)</string>
+    <string name="dimensions">Dimensions (m)\n(optional)</string>
     <string name="dimensions_hint">0</string>
     <string name="units">Units</string>
     <string name="units_hint">CBM, kg</string>
