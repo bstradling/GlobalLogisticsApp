@@ -6,160 +6,378 @@
     android:layout_height="match_parent"
     tools:context=".ServicesActivity">
 
-    <CheckBox
-        android:id="@+id/cbTransportManpower"
-        android:layout_width="176dp"
-        android:layout_height="48dp"
-        android:buttonTint="#8BC34A"
-        android:clickable="true"
-        android:text="@string/services_manpower"
-        android:visibility="gone"
-        app:layout_constraintBaseline_toBaselineOf="@+id/cbTransport"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:visibility="visible" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
 
-    <CheckBox
-        android:id="@+id/cbDischargingManpower"
-        android:layout_width="176dp"
-        android:layout_height="48dp"
-        android:buttonTint="#8BC34A"
-        android:clickable="true"
-        android:text="@string/services_manpower"
-        android:visibility="gone"
-        app:layout_constraintBaseline_toBaselineOf="@+id/cbDischarging"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:visibility="visible" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <CheckBox
-        android:id="@+id/cbCustoms"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="28dp"
-        android:buttonTint="#8BC34A"
-        android:text="@string/services_customs"
-        android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etServiceTitle" />
+            <CheckBox
+                android:id="@+id/cbTransportManpower"
+                android:layout_width="176dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="28dp"
+                android:buttonTint="#8BC34A"
+                android:clickable="true"
+                android:text="@string/services_manpower"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cbTransport"
+                tools:visibility="visible" />
 
-    <CheckBox
-        android:id="@+id/cbTransport"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="28dp"
-        android:buttonTint="#8BC34A"
-        android:clickable="true"
-        android:text="@string/services_transport"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.000"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cbCustoms"
-        tools:visibility="visible" />
+            <CheckBox
+                android:id="@+id/cbDischargingManpower"
+                android:layout_width="176dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="28dp"
+                android:buttonTint="#8BC34A"
+                android:clickable="true"
+                android:text="@string/services_manpower"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cbDischarging"
+                tools:visibility="visible" />
 
-    <CheckBox
-        android:id="@+id/cbDischarging"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="28dp"
-        android:buttonTint="#8BC34A"
-        android:clickable="true"
-        android:text="@string/services_discharge"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cbTransport" />
+            <CheckBox
+                android:id="@+id/cbCustoms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="28dp"
+                android:buttonTint="#8BC34A"
+                android:text="@string/services_customs"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etServiceTitle" />
 
-    <CheckBox
-        android:id="@+id/cbLoading"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="28dp"
-        android:buttonTint="#8BC34A"
-        android:text="@string/services_loading"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cbDischarging" />
+            <CheckBox
+                android:id="@+id/cbTransport"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="28dp"
+                android:buttonTint="#8BC34A"
+                android:clickable="true"
+                android:text="@string/services_transport"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.000"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cbCustoms"
+                tools:visibility="visible" />
 
-    <CheckBox
-        android:id="@+id/cbWarehousing"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="28dp"
-        android:buttonTint="#8BC34A"
-        android:clickable="true"
-        android:text="@string/services_warehousing"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cbLoading" />
+            <CheckBox
+                android:id="@+id/cbDischarging"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="28dp"
+                android:buttonTint="#8BC34A"
+                android:clickable="true"
+                android:text="@string/services_discharge"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cbTransportManpower" />
 
-    <CheckBox
-        android:id="@+id/cbWarehousingManpower"
-        android:layout_width="176dp"
-        android:layout_height="48dp"
-        android:buttonTint="#8BC34A"
-        android:text="@string/services_manpower"
-        android:visibility="gone"
-        app:layout_constraintBaseline_toBaselineOf="@+id/cbWarehousing"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:visibility="visible" />
+            <CheckBox
+                android:id="@+id/cbLoading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="28dp"
+                android:buttonTint="#8BC34A"
+                android:text="@string/services_loading"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cbDischargingManpower" />
 
-    <CheckBox
-        android:id="@+id/cbLoadingManpower"
-        android:layout_width="176dp"
-        android:layout_height="48dp"
-        android:buttonTint="#8BC34A"
-        android:clickable="true"
-        android:text="@string/services_manpower"
-        android:visibility="gone"
-        app:layout_constraintBaseline_toBaselineOf="@+id/cbLoading"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:visibility="visible" />
+            <CheckBox
+                android:id="@+id/cbWarehousing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="28dp"
+                android:buttonTint="#8BC34A"
+                android:clickable="true"
+                android:text="@string/services_warehousing"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cbLoadingManpower" />
 
-    <EditText
-        android:id="@+id/etServiceTitle"
-        android:layout_width="219dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="28dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:text="@string/Service_Screen_Name"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <CheckBox
+                android:id="@+id/cbWarehousingManpower"
+                android:layout_width="176dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="28dp"
+                android:buttonTint="#8BC34A"
+                android:text="@string/services_manpower"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cbWarehousing"
+                tools:visibility="visible" />
 
-    <Button
-        android:id="@+id/bToEstimate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="@string/next"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.975" />
+            <CheckBox
+                android:id="@+id/cbLoadingManpower"
+                android:layout_width="176dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="28dp"
+                android:buttonTint="#8BC34A"
+                android:clickable="true"
+                android:text="@string/services_manpower"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cbLoading"
+                tools:visibility="visible" />
 
-    <Button
-        android:id="@+id/bBackToManifest"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Back"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
+            <EditText
+                android:id="@+id/etServiceTitle"
+                android:layout_width="219dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="28dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:text="@string/Service_Screen_Name"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/bToEstimate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="12dp"
+                android:text="@string/next"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/bBackToManifest" />
+
+            <Button
+                android:id="@+id/bBackToManifest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginBottom="12dp"
+                android:text="Back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cbTariff" />
+
+            <CheckBox
+                android:id="@+id/cbDemurrage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="28dp"
+                android:buttonTint="#8BC34A"
+                android:clickable="true"
+                android:text="Demurrage"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cbWarehousingManpower" />
+
+            <CheckBox
+                android:id="@+id/cbDetention"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="28dp"
+                android:buttonTint="#8BC34A"
+                android:clickable="true"
+                android:text="Detention"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cbDemurrage" />
+
+            <CheckBox
+                android:id="@+id/cbTariff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="28dp"
+                android:buttonTint="#8BC34A"
+                android:clickable="true"
+                android:text="Tariff"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cbDetention" />
+
+            <EditText
+                android:id="@+id/etCustomsCost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="4"
+                android:hint="Cost"
+                android:inputType="numberDecimal"
+                android:visibility="gone"
+                tools:visibility="visible"
+                app:layout_constraintBaseline_toBaselineOf="@+id/cbCustoms"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <EditText
+                android:id="@+id/etTransportCost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="4"
+                android:hint="Cost"
+                android:inputType="numberDecimal"
+                android:visibility="gone"
+                tools:visibility="visible"
+                app:layout_constraintBaseline_toBaselineOf="@+id/cbTransport"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <EditText
+                android:id="@+id/etTransportManpowerCost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="4"
+                android:hint="Cost"
+                android:inputType="numberDecimal"
+                android:visibility="gone"
+                tools:visibility="visible"
+                app:layout_constraintBaseline_toBaselineOf="@+id/cbTransportManpower"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <EditText
+                android:id="@+id/etDischargeCost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="4"
+                android:hint="Cost"
+                android:inputType="numberDecimal"
+                android:visibility="gone"
+                tools:visibility="visible"
+                app:layout_constraintBaseline_toBaselineOf="@+id/cbDischarging"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <EditText
+                android:id="@+id/etDischargeManpowerCost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="4"
+                android:hint="Cost"
+                android:inputType="numberDecimal"
+                android:visibility="gone"
+                tools:visibility="visible"
+                app:layout_constraintBaseline_toBaselineOf="@+id/cbDischargingManpower"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <EditText
+                android:id="@+id/etLoadingCost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="4"
+                android:hint="Cost"
+                android:inputType="numberDecimal"
+                android:visibility="gone"
+                tools:visibility="visible"
+                app:layout_constraintBaseline_toBaselineOf="@+id/cbLoading"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <EditText
+                android:id="@+id/etLoadingManpowerCost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="4"
+                android:hint="Cost"
+                android:inputType="numberDecimal"
+                android:visibility="gone"
+                tools:visibility="visible"
+                app:layout_constraintBaseline_toBaselineOf="@+id/cbLoadingManpower"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <EditText
+                android:id="@+id/etWarehousingCost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="4"
+                android:hint="Cost"
+                android:inputType="numberDecimal"
+                android:visibility="gone"
+                tools:visibility="visible"
+                app:layout_constraintBaseline_toBaselineOf="@+id/cbWarehousing"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <EditText
+                android:id="@+id/etWarehousingManpowerCost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="4"
+                android:hint="Cost"
+                android:inputType="numberDecimal"
+                android:visibility="gone"
+                tools:visibility="visible"
+                app:layout_constraintBaseline_toBaselineOf="@+id/cbWarehousingManpower"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <EditText
+                android:id="@+id/etDemurrageCost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="4"
+                android:hint="Cost"
+                android:inputType="numberDecimal"
+                android:visibility="gone"
+                tools:visibility="visible"
+                app:layout_constraintBaseline_toBaselineOf="@+id/cbDemurrage"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <EditText
+                android:id="@+id/etDetentionCost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="4"
+                android:hint="Cost"
+                android:inputType="numberDecimal"
+                android:visibility="gone"
+                tools:visibility="visible"
+                app:layout_constraintBaseline_toBaselineOf="@+id/cbDetention"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <EditText
+                android:id="@+id/etTariffCost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="4"
+                android:hint="Cost"
+                android:inputType="numberDecimal"
+                android:visibility="gone"
+                tools:visibility="visible"
+                app:layout_constraintBaseline_toBaselineOf="@+id/cbTariff"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
