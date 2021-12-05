@@ -42,7 +42,14 @@ public class EstimateActivity extends AppCompatActivity {
         String volumeString = data.getVolume();
         String[] seperated = volumeString.split(" ");
 
-        costs.setWm(Float.parseFloat(seperated[0]),Float.parseFloat(data.getWeight()));
+        float temp;
+        if (data.getWeight().isEmpty()) {
+            temp = 0;
+        }
+        else {
+            temp = Float.parseFloat(data.getWeight());
+        }
+        costs.setWm(Float.parseFloat(seperated[0]),temp);
         costs.setRebate();
 
         TextView rebate = findViewById(R.id.tvRebate);
@@ -62,7 +69,6 @@ public class EstimateActivity extends AppCompatActivity {
         output = output.replace("\",\"","\"\n\n\"");
         output = output.replace("\"","");
         output = output.replace(":",": ");
-        //output = output.replace("volumeValue: ", "");
 
         //Full formatting
         output = output.replace("AccountInfo:","Account Info:");
