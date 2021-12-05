@@ -40,7 +40,7 @@ public class EstimateActivity extends AppCompatActivity {
 
         costs = new CostCalculator();
         String volumeString = data.getVolume();
-        String[] seperated = volumeString.split(" ");
+        String[] separated = volumeString.split(" ");
 
         float temp;
         if (data.getWeight().isEmpty()) {
@@ -49,7 +49,7 @@ public class EstimateActivity extends AppCompatActivity {
         else {
             temp = Float.parseFloat(data.getWeight());
         }
-        costs.setWm(Float.parseFloat(seperated[0]),temp);
+        costs.setWm(Float.parseFloat(separated[0]),temp);
         costs.setRebate();
 
         TextView rebate = findViewById(R.id.tvRebate);
