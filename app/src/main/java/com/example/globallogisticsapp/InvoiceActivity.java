@@ -20,6 +20,7 @@ public class InvoiceActivity extends AppCompatActivity {
     private String json;
     private String shippingType;
     private ShippingManifest data;
+    private CostCalculator costs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,7 @@ public class InvoiceActivity extends AppCompatActivity {
         data = (ShippingManifest) intent.getSerializableExtra("JSON_DATA");
         shippingType = intent.getStringExtra("SHIPPING_TYPE");
         String output = intent.getStringExtra("OUTPUT");
+        costs = (CostCalculator) intent.getSerializableExtra("COSTS");
 
         ListView listviewInvoice = findViewById(R.id.listviewInvoice);
 
@@ -38,6 +40,14 @@ public class InvoiceActivity extends AppCompatActivity {
                 android.R.layout.simple_list_item_1, Collections.singletonList(output));
 
         listviewInvoice.setAdapter(adapter);
+
+        //Set the respective Cost text views (including rebate) and calculate and display the total.
+        //TO DO . . .
+
+
+
+
+
 
         Button estimate = findViewById(R.id.bBackToEstimate);
         estimate.setOnClickListener(new View.OnClickListener() {
@@ -54,6 +64,7 @@ public class InvoiceActivity extends AppCompatActivity {
         intent.putExtra("JSON_DATA", data);
         intent.putExtra("JSON", json);
         intent.putExtra("SHIPPING_TYPE",shippingType);
+        intent.putExtra("COSTS",costs);
         startActivity(intent);
     }
 }

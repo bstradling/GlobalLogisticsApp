@@ -37,8 +37,8 @@ public class EstimateActivity extends AppCompatActivity {
         json = intent.getStringExtra("JSON");
         data = (ShippingManifest) intent.getSerializableExtra("JSON_DATA");
         shippingType = intent.getStringExtra("SHIPPING_TYPE");
+        costs = (CostCalculator) intent.getSerializableExtra("COSTS");
 
-        costs = new CostCalculator();
         String volumeString = data.getVolume();
         String[] separated = volumeString.split(" ");
 
@@ -246,6 +246,7 @@ public class EstimateActivity extends AppCompatActivity {
         intent.putExtra("JSON", json);
         intent.putExtra("OUTPUT", output);
         intent.putExtra("SHIPPING_TYPE",shippingType);
+        intent.putExtra("COSTS",costs);
         startActivity(intent);
     }
 

@@ -56,6 +56,8 @@ public class ServicesActivity extends AppCompatActivity {
     CheckBox tariff;
     EditText tariffCost;
 
+    CostCalculator costs = new CostCalculator();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -382,6 +384,19 @@ public class ServicesActivity extends AppCompatActivity {
         json = gson.toJson(data);
 
         Log.d(this.getLocalClassName(), "Attempting to save appended JSON data\n" + json);
+
+        costs.setCustomsCost(Float.parseFloat(customsCost.getText().toString()));
+        costs.setDemurrageCost(Float.parseFloat(demurrageCost.getText().toString()));
+        costs.setDetentionCost(Float.parseFloat(detentionCost.getText().toString()));
+        costs.setDischargeCost(Float.parseFloat(dischargeCost.getText().toString()));
+        costs.setDischargeManpowerCost(Float.parseFloat(dischargeManpowerCost.getText().toString()));
+        costs.setLoadingCost(Float.parseFloat(loadingCost.getText().toString()));
+        costs.setLoadingManpowerCost(Float.parseFloat(loadingManpowerCost.getText().toString()));
+        costs.setTariffCost(Float.parseFloat(tariffCost.getText().toString()));
+        costs.setTransportCost(Float.parseFloat(transportCost.getText().toString()));
+        costs.setTransportManpowerCost(Float.parseFloat(transportManpowerCost.getText().toString()));
+        costs.setWarehousingCost(Float.parseFloat(warehousingCost.getText().toString()));
+        costs.setWarehousingManpowerCost(Float.parseFloat(warehousingManpowerCost.getText().toString()));
     }
 
     public void openEstimate(View view) {
@@ -390,6 +405,8 @@ public class ServicesActivity extends AppCompatActivity {
         intent.putExtra("JSON_DATA", data);
         intent.putExtra("JSON", json);
         intent.putExtra("SHIPPING_TYPE",shippingType);
+        intent.putExtra("COSTS",costs);
+
         startActivity(intent);
     }
 

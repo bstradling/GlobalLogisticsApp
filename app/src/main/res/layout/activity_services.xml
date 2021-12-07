@@ -239,10 +239,11 @@
                 android:ems="4"
                 android:hint="Cost"
                 android:inputType="numberDecimal"
+                android:text="0.00"
                 android:visibility="gone"
-                tools:visibility="visible"
                 app:layout_constraintBaseline_toBaselineOf="@+id/cbCustoms"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:visibility="visible" />
 
             <EditText
                 android:id="@+id/etTransportCost"
@@ -251,10 +252,11 @@
                 android:ems="4"
                 android:hint="Cost"
                 android:inputType="numberDecimal"
+                android:text="0.00"
                 android:visibility="gone"
-                tools:visibility="visible"
                 app:layout_constraintBaseline_toBaselineOf="@+id/cbTransport"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:visibility="visible" />
 
             <EditText
                 android:id="@+id/etTransportManpowerCost"
@@ -263,10 +265,11 @@
                 android:ems="4"
                 android:hint="Cost"
                 android:inputType="numberDecimal"
+                android:text="0.00"
                 android:visibility="gone"
-                tools:visibility="visible"
                 app:layout_constraintBaseline_toBaselineOf="@+id/cbTransportManpower"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:visibility="visible" />
 
             <EditText
                 android:id="@+id/etDischargeCost"
@@ -275,10 +278,11 @@
                 android:ems="4"
                 android:hint="Cost"
                 android:inputType="numberDecimal"
+                android:text="0.00"
                 android:visibility="gone"
-                tools:visibility="visible"
                 app:layout_constraintBaseline_toBaselineOf="@+id/cbDischarging"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:visibility="visible" />
 
             <EditText
                 android:id="@+id/etDischargeManpowerCost"
@@ -287,10 +291,11 @@
                 android:ems="4"
                 android:hint="Cost"
                 android:inputType="numberDecimal"
+                android:text="0.00"
                 android:visibility="gone"
-                tools:visibility="visible"
                 app:layout_constraintBaseline_toBaselineOf="@+id/cbDischargingManpower"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:visibility="visible" />
 
             <EditText
                 android:id="@+id/etLoadingCost"
@@ -299,10 +304,11 @@
                 android:ems="4"
                 android:hint="Cost"
                 android:inputType="numberDecimal"
+                android:text="0.00"
                 android:visibility="gone"
-                tools:visibility="visible"
                 app:layout_constraintBaseline_toBaselineOf="@+id/cbLoading"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:visibility="visible" />
 
             <EditText
                 android:id="@+id/etLoadingManpowerCost"
@@ -311,10 +317,11 @@
                 android:ems="4"
                 android:hint="Cost"
                 android:inputType="numberDecimal"
+                android:text="0.00"
                 android:visibility="gone"
-                tools:visibility="visible"
                 app:layout_constraintBaseline_toBaselineOf="@+id/cbLoadingManpower"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:visibility="visible" />
 
             <EditText
                 android:id="@+id/etWarehousingCost"
@@ -323,10 +330,11 @@
                 android:ems="4"
                 android:hint="Cost"
                 android:inputType="numberDecimal"
+                android:text="0.00"
                 android:visibility="gone"
-                tools:visibility="visible"
                 app:layout_constraintBaseline_toBaselineOf="@+id/cbWarehousing"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:visibility="visible" />
 
             <EditText
                 android:id="@+id/etWarehousingManpowerCost"
@@ -335,10 +343,11 @@
                 android:ems="4"
                 android:hint="Cost"
                 android:inputType="numberDecimal"
+                android:text="0.00"
                 android:visibility="gone"
-                tools:visibility="visible"
                 app:layout_constraintBaseline_toBaselineOf="@+id/cbWarehousingManpower"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:visibility="visible" />
 
             <EditText
                 android:id="@+id/etDemurrageCost"
@@ -347,10 +356,11 @@
                 android:ems="4"
                 android:hint="Cost"
                 android:inputType="numberDecimal"
+                android:text="0.00"
                 android:visibility="gone"
-                tools:visibility="visible"
                 app:layout_constraintBaseline_toBaselineOf="@+id/cbDemurrage"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:visibility="visible" />
 
             <EditText
                 android:id="@+id/etDetentionCost"
@@ -359,10 +369,11 @@
                 android:ems="4"
                 android:hint="Cost"
                 android:inputType="numberDecimal"
+                android:text="0.00"
                 android:visibility="gone"
-                tools:visibility="visible"
                 app:layout_constraintBaseline_toBaselineOf="@+id/cbDetention"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:visibility="visible" />
 
             <EditText
                 android:id="@+id/etTariffCost"
@@ -371,10 +382,11 @@
                 android:ems="4"
                 android:hint="Cost"
                 android:inputType="numberDecimal"
+                android:text="0.00"
                 android:visibility="gone"
-                tools:visibility="visible"
                 app:layout_constraintBaseline_toBaselineOf="@+id/cbTariff"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:visibility="visible" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
