@@ -144,8 +144,11 @@ public class CostCalculator implements Serializable {
         return warehousingManpowerCost;
     }
 
-    public void setTotal(float total) {
-        this.total = total;
+    public void setTotal() {
+       total = rebate + customsCost + transportCost + transportManpowerCost +
+               dischargeCost + dischargeManpowerCost + loadingCost +
+               loadingManpowerCost + warehousingCost + warehousingManpowerCost +
+               demurrageCost + detentionCost + tariffCost;
     }
 
     public float getTotal() {
